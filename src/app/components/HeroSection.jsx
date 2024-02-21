@@ -8,7 +8,7 @@ import {motion} from "framer-motion";
 
 const HeroSection = () => {
     return (
-        <section className={"lg:py-16"}>
+        <section className={"lg:py-16"} id="about" >
 
             <div className="grid grid-cols-1 sm:grid-cols-12">
                 <motion.div initial={{ opacity: 0, scale:0.5}} animate={{ opacity:1, scale:1}} transition={{duration: 0.5}} className="col-span-8 place-self-center text-center sm:text-left justify-self-start">
@@ -25,11 +25,11 @@ const HeroSection = () => {
                                 // Same substring at the start will only be typed out once, initially
                                 'Cansu',
                                 1000, // wait 1s before replacing "Mice" with "Hamsters"
-                                'Game Developer',
+                                'a Game Developer',
                                 1000,
-                                ' Developer',
+                                'a Developer',
                                 1000,
-                                '2D pixel artist ',
+                                'a 2D pixel artist ',
                                 1000
                             ]}
                             wrapper="span"
@@ -44,13 +44,9 @@ const HeroSection = () => {
                     </p>
                     <div>
                         <button
-                            className={"px-6 py-2 w-full sm:w-fit  rounded-full mr-4 mb-3 bg-gradient-to-br from-cyan-500 via-purple-500 to-pink-500 hover:bg-slate-200 text-white  "}>
-                            Hire Me
-                        </button>
-                        <button
-                            className={"px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-cyan-500 via-purple-500 to to-pink-500 hover:bg-slate-800 text-white  "}>
+                            className={"px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-cyan-500 via-purple-500 to to-pink-500 hover:bg-slate-800 text-white"}>
                                 <span className={"block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2"}>
-                                Download CV
+                                    <a href={"public/CV.pdf"} download={"CansuArslangiray.pdf"}>Download CV</a>
                                 </span>
                         </button>
                     </div>
