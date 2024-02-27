@@ -27,8 +27,6 @@ const HeroSection = () => {
                                 1000, // wait 1s before replacing "Mice" with "Hamsters"
                                 'a Game Developer',
                                 1000,
-                                'a Developer',
-                                1000,
                                 'a 2D pixel artist ',
                                 1000
                             ]}

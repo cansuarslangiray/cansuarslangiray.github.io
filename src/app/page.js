@@ -7,7 +7,9 @@ import ProjectSection from "@/app/components/ProjectSection";
 import EmailSection from "@/app/components/EmailSection";
 import Footer from "@/app/components/Footer";
 import AchievementsSection from "@/app/components/AchievementsSection";
-
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
 
 export default function Home() {
     return (
