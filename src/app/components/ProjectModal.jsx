@@ -1,87 +1,160 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { CodeBracketIcon } from "@heroicons/react/24/outline";
 
 const ProjectModal = ({ project, onClose }) => {
-  return (
-    <Transition.Root show={true} as={React.Fragment}>
-      <Dialog
-        as="div"
-        className="fixed z-10 inset-0 overflow-y-auto"
-        onClose={onClose}
-      >
-        <div className="flex items-center justify-center h-screen">
-          <Transition.Child
-            as={React.Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
-          </Transition.Child>
+    // Handle closing the modal when pressing the escape key
+    useEffect(() => {
+        const handleEsc = (event) => {
+            if (event.keyCode === 27) {
+                onClose();
+            }
+        };
 
-          <Transition.Child
-            as={React.Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0 scale-95"
-            enterTo="opacity-100 scale-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100 scale-100"
-            leaveTo="opacity-0 scale-95"
-          >
-            <div className="p-3">
-            <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full"
-              style={{ minHeight: "90vh", minWidth: "75vw" }}
+        window.addEventListener("keydown", handleEsc);
+
+        return () => {
+            window.removeEventListener("keydown", handleEsc);
+        };
+    }, [onClose]);
+
+    const handleClickInsideModal = (event) => {
+        // Prevent click event propagation to parent elements
+        event.stopPropagation();
+    };
+
+    return (
+        <Transition.Root show={true} as={React.Fragment}>
+            <Dialog
+                as="div"
+                className="fixed z-50 inset-0 overflow-y-auto"
+                onClose={onClose}
             >
-              <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                <div className="sm:flex sm:items-start">
-                  <div className="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 sm:mx-0 sm:h-10 sm:w-10">
-                    <CodeBracketIcon
-                      className="h-6 w-6 text-green-600"
-                      aria-hidden="true"
-                    />
-                  </div>
-                  <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                    <Dialog.Title
-                      as="h3"
-                      className="text-lg leading-6 font-medium text-gray-900"
+                <div onClick={onClose} className="flex items-center justify-center h-screen">
+                    <Transition.Child
+                        as={React.Fragment}
+                        enter="ease-out duration-300"
+                        enterFrom="opacity-0"
+                        enterTo="opacity-100"
+                        leave="ease-in duration-200"
+                        leaveFrom="opacity-100"
+                        leaveTo="opacity-0"
                     >
-                      {project.title}
-                    </Dialog.Title>
-                    <div className="mt-2">
-                      <p className="text-sm text-gray-500">
-                        {project.description}
-                      </p>
-                    </div>
-                  </div>
+                        <Dialog.Overlay  className="fixed -z-10 inset-0 bg-black opacity-30" />
+                    </Transition.Child>
+
+                    <Transition.Child
+                        as={React.Fragment}
+                        enter="ease-out duration-300"
+                        enterFrom="opacity-0 scale-95"
+                        enterTo="opacity-100 scale-100"
+                        leave="ease-in duration-200"
+                        leaveFrom="opacity-100 scale-100"
+                        leaveTo="opacity-0 scale-95"
+                    >
+                        <div className="modal-container" onClick={handleClickInsideModal}>
+                            <div className="modal-content">
+                                <h1 className="project-title title">
+                                    {project.title}
+                                    {!project.hasVideo && (
+                                        <a href={project.gitUrl} target="_blank">
+                                            <img
+                                                src="../../../public/github-icon.svg"
+                                                alt="GitHub"
+                                                className="noStore"
+                                            />
+                                        </a>
+                                    )}
+                                </h1>
+                                <div style={{paddingTop: "20px"}} className="grid-layout">
+                                    {project.hasVideo && (
+                                        <div className="grid-row">
+                                            <div className="text-part">
+                                                <div className="plyr__video-embed" id="player">
+                                                    <iframe
+                                                        src={project.safeURL}
+                                                        allowFullScreen
+                                                        allowTransparency
+                                                        allow="autoplay"
+                                                    ></iframe>
+                                                </div>
+                                            </div>
+                                            <div className="image-part">
+                                                <div className="github-icons">
+                                                    <a
+                                                        className="github-icon left"
+                                                        href={project.repoLink}
+                                                        target="_blank"
+                                                    >
+                                                        <img
+                                                            src="../../../public/github-icon.svg"
+                                                            alt=""
+                                                            className="icon"
+                                                        />
+                                                    </a>
+                                                    {project.hasStore && (
+                                                        <a
+                                                            className="github-icon right"
+                                                            href={project.storeUrl}
+                                                            target="_blank"
+                                                        >
+                                                            <img
+                                                                src="assets/gp.png"
+                                                                alt=""
+                                                                className="icon"
+                                                            />
+                                                        </a>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
+                                    <div className="grid-row">
+                                        <div className="text-part">
+                                            <h3 className="headings">Description</h3>
+                                            <p>{project.textOne}</p>
+                                        </div>
+                                        <div className="image-part">
+                                            <img src={project.imageOne} alt="Description Image"/>
+                                        </div>
+                                    </div>
+                                    <div className="grid-row">
+                                        <div className="image-part">
+                                            <img src={project.imageTwo} alt="Features Image"/>
+                                        </div>
+                                        <div className="text-part">
+                                            <h3 className="headings">{project.partOneTitle}</h3>
+                                            <ul>
+                                                {project.textTwo.split("_").map((feature, index) => (
+                                                    <li key={index}>{feature}</li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div className="grid-row">
+                                        <div className="text-part">
+                                            <h3 className="headings">{project.partTwoTitle}</h3>
+                                            <ul>
+                                                {project.textThree.split("_").map((step, index) => (
+                                                    <li key={index}>{step}</li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                        <div className="image-part">
+                                            <img
+                                                src={project.imageThree}
+                                                alt="How to Play Image"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </Transition.Child>
                 </div>
-              </div>
-              <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                <button
-                  type="button"
-                  className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm"
-                  onClick={onClose}
-                >
-                  View Details
-                </button>
-                <button
-                  type="button"
-                  className="mt-3 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-300 text-base font-medium text-gray-700 hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
-                  onClick={onClose}
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-            </div>
-          </Transition.Child>
-        </div>
-      </Dialog>
-    </Transition.Root>
-  );
+            </Dialog>
+        </Transition.Root>
+    );
 };
 
 export default ProjectModal;
