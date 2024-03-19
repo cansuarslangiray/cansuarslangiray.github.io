@@ -1,32 +1,80 @@
-[
+[{
+  "name": "Oyun ve Uygulama Akademisi Mezuniyet Sertifikası 2023",
+  "imagePath": "/image/certificates/MezuniyetOUA.png",
+  "url": "https://verified.sertifier.com/en/verify/38848615233277/"
+},
+{
+  "name": "Unity ile Oyun Geliştirme",
+  "imagePath": "/image/certificates/unityOUA.png",
+  "url": "https://verified.sertifier.com/en/verify/03631525280575/"
+},
+{
+  "name": "Teknoloji Girişimciliği",
+  "imagePath": "/image/certificates/girisimcilikOUA.png",
+  "url": "https://verified.sertifier.com/en/verify/20259910603055/"
+},
+{
+  "name": "Yazılımcılar İçin İngilizce Eğitimi",
+  "imagePath": "/image/certificates/IngOUA.png",
+  "url": "https://verified.sertifier.com/en/verify/94032784070286/"
+},
+  {
+    "name": "Bitirme Projesi: Proje Yönetimini Gerçek Dünyada Uygulamak",
+    "imagePath": "/image/certificates/bitirme.png",
+    "url": "https://www.coursera.org/account/accomplishments/verify/AND3V8SHK8DZ"
+  },
+  {
+    "name": "Google Proje Yönetimi",
+    "imagePath": "/image/certificates/6OUA.png",
+    "url": "https://www.coursera.org/account/accomplishments/professional-cert/2VPUJDNNPQ5X"
+  },
+  {
+    "name": "Çevik Proje Yönetimi",
+    "imagePath": "/image/certificates/Cevik.png",
+    "url": "https://www.coursera.org/account/accomplishments/verify/K8HNZTT37ZYD"
+  },
+  {
+    "name": "Projeyi Yürütme: Projeyi Hayata Geçirme",
+    "imagePath": "/image/certificates/ProjeYurutme.png",
+    "url": "https://www.coursera.org/account/accomplishments/verify/6E8WXVMJYM5E"
+  },
+  {
+    "name": "Proje Planlaması: Her Şeyi Bir Araya Getirmek",
+    "imagePath": "/image/certificates/ProjePlanlama.png",
+    "url": "https://www.coursera.org/account/accomplishments/verify/39XDQ3YVEB2T"
+  },
+  {
+    "name": "Projeyi Başlatma: Projeye Başarıyla Adım Atma",
+    "imagePath": "/image/certificates/Pb.png",
+    "url": "https://www.coursera.org/account/accomplishments/verify/P9MLWA4BZ6A2"
+  },
   {
     "name": "Proje Yönetiminin Temelleri",
-    "imagePath": "/image/certificates/pty.png",
-    "url": "https://coursera.org/verify/SEMM7QVSHPUS"
-  },
-  {
-    "name": "Unity Game Development Bootcamp",
-    "imagePath": "/image/certificates/ugdb.png",
-    "url": "https://certificates.techcareer.net/tr/verify/81777765051236"
-  },
-  {
-    "name": "The Ultimate Guide to Game Development with Unity",
-    "imagePath": "/image/certificates/uggdu.jpg",
-    "url": "https://www.udemy.com/certificate/UC-fe6a7185-f4bd-4529-9753-a17d9b87b7f8/"
-  },
-  {
-    "name": "Sıfırdan İleri Seviyeye Oyun Tasarlama",
-    "imagePath": "/image/certificates/sisot.jpg",
-    "url": "https://www.udemy.com/certificate/UC-bb1c912e-8ca3-4980-9d8b-53d1515b85ff/"
-  },
-  {
-    "name": "SummerCamp'22 || Flutter Bootcamp",
-    "imagePath": "/image/certificates/scfb.png",
-    "url": "https://verified.sertifier.com/en/verify/84292499712757/?ref"
+    "imagePath": "/image/certificates/pyt.png",
+    "url": "https://www.coursera.org/account/accomplishments/verify/Y35DYCTMU2LE"
   },
   {
     "name": "SummerCamp'22 || Tensorflow Bootcamp",
-    "imagePath": "/image/certificates/sctb.png",
-    "url": "https://verified.sertifier.com/en/verify/41923750590312/?ref"
+    "imagePath": "/image/certificates/mlStudyJams.png",
+    "url": "https://verified.sertifier.com/en/verify/05708848244476/?ref"
+  },
+  {
+    "name": "SummerCamp'22 || Flutter Bootcamp",
+    "imagePath": "/image/certificates/Summercamp22.png",
+    "url": "https://verified.sertifier.com/en/verify/87852240223032/?ref"
+  }, {
+    "name": "Deep Learning bootcamp",
+    "imagePath": "/image/certificates/DL.png",
+    "url": "https://globalaihub.com/verify/?ref=product&certificate=eyJ1c2VyLWlkIjoxNDQ2NjAsImNvdXJzZS1pZCI6MTE2MTA2LCJjZXJ0LWlkIjoiMTE2MTA5In0="
+  },
+  {
+    "name": "Python for Machine Learning",
+    "imagePath": "/image/certificates/pml.png",
+    "url": "https://globalaihub.com/verify/?ref=product&certificate=eyJ1c2VyLWlkIjoxNDQ2NjAsImNvdXJzZS1pZCI6MTEyODY0LCJjZXJ0LWlkIjoiMTEzMjYzIn0="
+  },
+  {
+    "name": "Introduction to deep learning",
+    "imagePath": "/image/certificates/Al.png",
+    "url": "https://globalaihub.com/verify/?ref=product&certificate=eyJ1c2VyLWlkIjoxNDQ2NjAsImNvdXJzZS1pZCI6MTE1MjE5LCJjZXJ0LWlkIjoiMTE1Mzg4In0="
   }
 ]
