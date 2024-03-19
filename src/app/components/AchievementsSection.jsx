@@ -9,12 +9,12 @@ const AnimatedNumbers = dynamic(() => {
 
 const achievementList = [
     {
-        metric: "Projects",
+        metric: "Games",
         value: "15",
         postfix: "+",
     },
     {
-        metric: "Years",
+        metric: "Applications",
         value: "3",
     },
 ];
@@ -22,19 +22,22 @@ const achievementList = [
 const AchievementsSection = () => {
     return (
         <div className={"py-8 px-4 xl:gap-16 sm:py-16 xl:px-16"}>
-            <div className={"border-[#33353F] border rounded-md py-8 px-16 flex flex-row items-center justify-around"}>
+            <div className={"border-[#abc4ff] border rounded-md py-8 px-16 flex flex-row items-center justify-around"} style={{
+                borderWidth: "4px",
+                borderRadius: "16px"
+            }}>
                 {
                     achievementList.map((achievement, index) => {
                         return (
                             <div key={index} className={"flex flex-col items-center justify-center mx-4"}
                             >
-                                <h2 className={"text-white text-4xl font-bold flex flex-row"}>
+                                <h2 className={"text-[#abc4ff] text-4xl font-bold flex flex-row"}>
                                     {achievement.prefix}
                                     <AnimatedNumbers
                                         includeComma
                                         animateToNumber={parseInt(achievement.value)}
                                         locale={"en-US"}
-                                        className={"text-white text-4xl font-bold"}
+                                        className={"text-[#abc4ff] text-4xl font-bold"}
                                         configs={(_,index)=> {
                                             return{
                                                 mass: 1,
@@ -45,7 +48,7 @@ const AchievementsSection = () => {
                                         />
                                     {achievement.postfix}
                                 </h2>
-                                <p className={"text-[#ADB7BE] text-base"}>{achievement.metric}</p>
+                                <p className={"text-[#ADB7BE] text-gray-600"}>{achievement.metric}</p>
                             </div>
                         );
                     })

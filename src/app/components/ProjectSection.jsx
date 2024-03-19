@@ -34,7 +34,26 @@ const ProjectSection = () => {
     };
     return (
         <section id="projects">
-            {/* Your existing code */}
+            <h2 className={"text-center text-4xl font-bold text-black mt-4 mb-8 md:mb-12"}>
+                My Projects
+            </h2>
+            <div className={"text-white flex flex-row justify-center items-center gap-2 py-6"}>
+                <ProjectTag
+                    onClick={handleTagChange}
+                    name="All"
+                    isSelected={tag === "All"}
+                />
+                <ProjectTag
+                    onClick={handleTagChange}
+                    name="Games"
+                    isSelected={tag === "game"}
+                />
+                <ProjectTag
+                    onClick={handleTagChange}
+                    name="Applications"
+                    isSelected={tag === "app"}
+                />
+            </div>
             <ul ref={ref} className={"grid md:grid-cols-3 gap-8 md:gap-12"}>
                 {filteredProjects.map((project, index) => (
                     // eslint-disable-next-line react/jsx-key

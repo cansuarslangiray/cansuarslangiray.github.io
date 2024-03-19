@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 
 const ProjectModal = ({ project, onClose }) => {
     // Handle closing the modal when pressing the escape key
@@ -53,15 +55,11 @@ const ProjectModal = ({ project, onClose }) => {
                     >
                         <div className="modal-container" onClick={handleClickInsideModal}>
                             <div className="modal-content">
-                                <h1 className="project-title title">
+                                <h1 className="project-title">
                                     {project.title}
                                     {!project.hasVideo && (
-                                        <a href={project.gitUrl} target="_blank">
-                                            <img
-                                                src="../../../public/github-icon.svg"
-                                                alt="GitHub"
-                                                className="noStore"
-                                            />
+                                        <a href={project.gitUrl} className="flex" target="_blank">
+                                             <FontAwesomeIcon icon={faGithub} className="noStore"/>
                                         </a>
                                     )}
                                 </h1>
@@ -86,8 +84,8 @@ const ProjectModal = ({ project, onClose }) => {
                                                         target="_blank"
                                                     >
                                                         <img
-                                                            src="../../../public/github-icon.svg"
-                                                            alt=""
+                                                            src="next.svg"
+                                                            alt="Hello"
                                                             className="icon"
                                                         />
                                                     </a>
@@ -122,8 +120,9 @@ const ProjectModal = ({ project, onClose }) => {
                                             <img src={project.imageTwo} alt="Features Image"/>
                                         </div>
                                         <div className="text-part">
-                                            <h3 className="headings">{project.partOneTitle}</h3>
-                                            <ul>
+                                            <h3 className="headings">{project.headerOne}</h3>
+                                            <ul style={{listStyleType:"circle"}}>
+                                            
                                                 {project.textTwo.split("_").map((feature, index) => (
                                                     <li key={index}>{feature}</li>
                                                 ))}
@@ -132,7 +131,7 @@ const ProjectModal = ({ project, onClose }) => {
                                     </div>
                                     <div className="grid-row">
                                         <div className="text-part">
-                                            <h3 className="headings">{project.partTwoTitle}</h3>
+                                            <h3 className="headings">{project.headerTwo}</h3>
                                             <ul>
                                                 {project.textThree.split("_").map((step, index) => (
                                                     <li key={index}>{step}</li>
