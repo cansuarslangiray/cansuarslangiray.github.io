@@ -48,12 +48,11 @@ const HeroSection = () => {
                 </motion.div>
                 <div className="col-span-4 place-self-center mt-4 lg:mt-0">
                     <div className={"rounded-full bg-[#FFAFCC] w-[350px] h-[350px] lg:w-[300px] lg:h-[300px] relative"}>
-                        <Image src={"/image/Foto.png"}
+                        <img style={{width: "250px", height:"250px"}} src={"/image/Foto.png"}
                                alt={"hero image"}
                                className={"absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"}
-                               width={250}
-                               height={250}
-                        />
+                        >
+                        </img>
                     </div>
                 </div>
             </div>

@@ -139,7 +139,7 @@ const AboutSection = () => {
     return (
         <section className={"text-gray-600 "}>
             <div className={"md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16"}>
-                < Image src={"/image/unity.png"} width={500} height={500} />
+                <img src={"/image/unity.png"} style={{width:"500px", borderRadius: "16px"}}></img>
                 <div className={"mt-4 md:mt-0 text-left flex flex-col h-full"}>
                     <h2 className={"text-4xl font-bold text-black mb-4"}>About Me</h2>
                     <p className={"text-base lg:text-lg"}>Experienced third-year computer engineering student with a
