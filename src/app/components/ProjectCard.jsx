@@ -6,8 +6,10 @@ const ProjectCard = ({imgUrl, title, description, click}) => {
             cursor: "pointer",
             borderRadius: "16px"
         }}>
-            <div >
-            <img style={{borderTopLeftRadius: "16px", borderTopRightRadius: "16px"}} src={imgUrl} alt="Hello"></img>
+            <div style={{
+                height: "250px", display: "flex", justifyContent: "center"
+            }}>
+            <img style={{borderTopLeftRadius: "16px", borderTopRightRadius: "16px" ,minWidth: "100%", height: "auto"}} src={imgUrl} alt="Hello"></img>
             </div>
             <div style={{
                 borderBottomLeftRadius: "16px",

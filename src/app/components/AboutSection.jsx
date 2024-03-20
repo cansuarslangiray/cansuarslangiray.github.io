@@ -112,17 +112,16 @@ const TAB_DATA = [
         id: "certifications",
         content: (
             <div class="project-grid">
-                {certificateData.map((certificate, index) => (
-                    <a class="certificate-url" href={certificate.url} target="_blank">
-                        <div class="project-tile">
-                            <div class="image-container">
-                                <img src={certificate.imagePath} alt="certificate" class="project-image-landscape" />
-                            </div>
-                            <div style={{textAlign:"center",
-                        fontWeight: "bold"}}>{certificate.name}</div>
-                        </div>
-                    </a>
-                ))}
+                {certificateData.map((certificate) => (
+    <a key={certificate.id} className="certificate-url" href={certificate.url} target="_blank">
+        <div className="project-tile">
+            <div className="image-container">
+                <img src={certificate.imagePath} alt="certificate" className="project-image-landscape" />
+            </div>
+            <div style={{ textAlign: "center", fontWeight: "bold" }}>{certificate.name}</div>
+        </div>
+    </a>
+))}
             </div>
         )
     }
