@@ -16,7 +16,7 @@
     "videoID": "",
     "hasStore": false,
     "storeURL": "",
-    "tags": ["All", "Game"],
+    "tags": ["All", "Games"],
     "gitUrl": "https://github.com/cansuarslangiray/Zombie-Farmer"
   },
   {
@@ -36,7 +36,7 @@
     "videoID": "",
     "hasStore": false,
     "storeURL": "",
-    "tags": ["All", "Game"],
+    "tags": ["All", "Games"],
     "gitUrl": "https://github.com/cansuarslangiray/UnlockersTale"
   },
   {
@@ -56,7 +56,7 @@
     "videoID": "",
     "hasStore": false,
     "storeURL": "",
-    "tags": ["All", "Game"],
+    "tags": ["All", "Games"],
     "gitUrl": "https://github.com/cansuarslangiray/DesertRun"
   },
   {
@@ -66,7 +66,7 @@
     "headerTwo": "How to Play",
     "description": "Startship Sprint is a 3D platformer arcade game where players launch control a starship with the aim of landing it to the designated area. There are multiple levels the players can complete. It features a simple yet addictive gameplay." ,
     "thumbnail": "/image/project/star/aa.png",
-    "imageOne": "/image/project/ss.gif",
+    "imageOne": "/image/project/star/ss.gif",
     "textOne": "Starship Sprint is a thrilling 3D platformer arcade game designed to test your piloting skills in the vast expanse of space. As a player, you'll take control of a sleek starship, navigating through challenging obstacles and treacherous terrain to successfully land at the designated area. With multiple levels to conquer, each offering unique challenges, Starship Sprint promises an exhilarating experience that will keep you on the edge of your seat.",
     "imageTwo": "/image/project/star/a3.png",
     "textTwo": "mmersive 3D Environment: Explore stunningly crafted 3D environments set against the backdrop of space, featuring intricate details and captivating visuals._Dynamic Gameplay: Experience adrenaline-pumping action as you maneuver your starship through a variety of obstacles, including asteroids, debris fields, and gravitational anomalies._Multiple Levels: Test your piloting prowess across a series of increasingly challenging levels, each presenting new hurdles and obstacles to overcome._Simple Controls: Enjoy intuitive controls that make piloting your starship easy to grasp yet challenging to master, ensuring players of all skill levels can dive into the excitement._Addictive Gameplay: With its fast-paced action and compelling level design, Starship Sprint offers addictive gameplay that will keep you coming back for more as you strive for perfection in every landing.",
@@ -76,7 +76,7 @@
     "videoID": "",
     "hasStore": false,
     "storeURL": "",
-    "tags": ["All", "Game"],
+    "tags": ["All", "Games"],
     "gitUrl": "https://github.com/cansuarslangiray/StarshipSprint"
   },
   {
@@ -96,7 +96,7 @@
     "videoID": "",
     "hasStore": false,
     "storeURL": "",
-    "tags": ["All", "Game"],
+    "tags": ["All", "Games"],
     "gitUrl": "https://github.com/cansuarslangiray/Dino"
   },
   {
@@ -116,7 +116,7 @@
     "videoID": "",
     "hasStore": false,
     "storeURL": "",
-    "tags": ["All", "Game"],
+    "tags": ["All", "Games"],
     "gitUrl": "https://github.com/cansuarslangiray/Obstacle"
   },
   {
@@ -136,7 +136,7 @@
     "videoID": "",
     "hasStore": false,
     "storeURL": "",
-    "tags": ["All", "Game"],
+    "tags": ["All", "Games"],
     "gitUrl": "https://github.com/cansuarslangiray/u-137"
   },
   {
@@ -156,7 +156,7 @@
     "videoID": "",
     "hasStore": false,
     "storeURL": "",
-    "tags": ["All", "Game"],
+    "tags": ["All", "Games"],
     "gitUrl": "https://github.com/cansuarslangiray/Susuwatari"
   },
   {
@@ -176,7 +176,7 @@
     "videoID": "",
     "hasStore": false,
     "storeURL": "",
-    "tags": ["All", "Game"],
+    "tags": ["All", "Games"],
     "gitUrl": "https://github.com/cansuarslangiray/PizzaHarvest"
   },
   {
@@ -196,7 +196,7 @@
     "videoID": "",
     "hasStore": false,
     "storeURL": "",
-    "tags": ["All", "Game"],
+    "tags": ["All", "Games"],
     "gitUrl": "https://github.com/cansuarslangiray/SpaceShooter"
   },
   {
@@ -216,7 +216,7 @@
     "videoID": "",
     "hasStore": false,
     "storeURL": "",
-    "tags": ["All", "Game"],
+    "tags": ["All", "Games"],
     "gitUrl": "https://github.com/cansuarslangiray/DirectionDash"
   },
   {
@@ -228,15 +228,15 @@
     "thumbnail": "/image/project/tgp/a2.png",
     "imageOne": "/image/project/tgp/PlanePlay.gif",
     "textOne": "The Gap Pilot is a game developed in Unity that offers a 3D twist on the classic Flappy Bird game. Players take control of an airplane navigating through narrow passages between towering walls. The objective is to maneuver the plane through the gaps while avoiding collisions with the walls. With its immersive 3D graphics and challenging gameplay, The Gap Pilot provides an engaging experience for players of all skill levels.",
-    "imageTwo": "/image/project/a1.png",
+    "imageTwo": "/image/project/tgp/a1.png",
     "textTwo": "Immersive 3D graphics that enhance the gameplay experience._Intuitive controls: Players can steer the airplane using either the WASD keys or arrow keys._Dynamic obstacle generation: The game features procedurally generated levels, ensuring each playthrough is unique._Increasing difficulty: As players progress, the speed and complexity of the obstacles gradually increase, providing a continuous challenge._Leaderboards: Compete with friends and other players worldwide to achieve the highest scores.",
-    "imageThree": "/image/project/a3.png",
+    "imageThree": "/image/project/tgp/a3.png",
     "textThree": "Start the Game: Launch The Gap Pilot from your device._Choose Your Controls: Decide whether you want to use the WASD keys or arrow keys to control the airplane._Navigate Through Gaps: As the game begins, your airplane will automatically start moving forward. Use your chosen controls to steer the plane through the narrow gaps between the walls._Avoid Collisions: Be careful not to collide with the walls. A single collision will end the game._Collect Points: Successfully navigating through a gap earns you points. The longer you survive, the higher your score will be._Challenge Yourself: Try to beat your own high score or compete with friends and other players on the global leaderboards.",
     "hasVideo": false,
     "videoID": "",
     "hasStore": false,
     "storeURL": "",
-    "tags": ["All", "Game"],
+    "tags": ["All", "Games"],
     "gitUrl": "https://github.com/cansuarslangiray/The-Gap-Pilot"
   },
   {
@@ -256,7 +256,7 @@
     "videoID": "",
     "hasStore": false,
     "storeURL": "",
-    "tags": ["All", "Game"],
+    "tags": ["All", "Applications"],
     "gitUrl": "https://github.com/cansuarslangiray/SE302Project"
   }
 ]
