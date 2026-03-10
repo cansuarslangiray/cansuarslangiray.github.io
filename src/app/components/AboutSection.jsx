@@ -15,7 +15,7 @@ const skills = [
 
 const AboutSection = () => {
     return (
-        <section className="mb-14" aria-label="About">
+        <section id="about" className="mb-14 scroll-mt-24" aria-label="About">
             <div className="mb-6">
                 <h2 className="section-heading">About Me</h2>
             </div>

@@ -1,13 +1,11 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSteam, faAppStoreIos, faGooglePlay } from "@fortawesome/free-brands-svg-icons";
-import { faStore } from "@fortawesome/free-solid-svg-icons";
+import { faAppStoreIos, faGooglePlay, faSteam } from "@fortawesome/free-brands-svg-icons";
 
 const platformIconMap = {
   steam: faSteam,
   appstore: faAppStoreIos,
   googleplay: faGooglePlay,
-  gamestore: faStore,
 };
 
 const chipClass = (tag) => {
@@ -45,7 +43,7 @@ const ProjectCard = ({ imgUrl, title, description, techTags = [], platforms = []
         />
       </div>
       <div className="space-y-3 p-5">
-        <div className="flex items-center justify-between gap-3">
+        <div className="flex items-start justify-between gap-3">
           <div className="flex flex-wrap gap-2">
             {techTags.map((tag) => (
               <span key={tag} className={`rounded-lg px-3 py-1 text-xs font-semibold ${chipClass(tag)}`}>
@@ -53,11 +51,11 @@ const ProjectCard = ({ imgUrl, title, description, techTags = [], platforms = []
               </span>
             ))}
           </div>
-          <div className="flex items-center gap-2 text-xl text-[#5e4f85]">
+          <div className="ml-auto flex shrink-0 items-center gap-2.5">
             {platforms.map((platform) => {
               const key = platform.toLowerCase();
-              const icon = platformIconMap[key];
-              if (!icon) return null;
+              const iconDef = platformIconMap[key];
+              if (!iconDef) return null;
               const href = platformLinks[key];
               if (href) {
                 return (
@@ -66,15 +64,22 @@ const ProjectCard = ({ imgUrl, title, description, techTags = [], platforms = []
                     href={href}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex"
+                    className="inline-flex rounded-lg border border-[#d8c9fb] bg-[#f4efff] p-1.5"
                     onClick={(event) => event.stopPropagation()}
                     aria-label={platform}
                   >
-                    <FontAwesomeIcon icon={icon} title={platform} />
+                    <FontAwesomeIcon icon={iconDef} className="h-6 w-6 text-[#6A5BC9]" />
                   </a>
                 );
               }
-              return <FontAwesomeIcon key={platform} icon={icon} title={platform} />;
+              return (
+                <span
+                  key={platform}
+                  className="inline-flex rounded-lg border border-[#d8c9fb] bg-[#f4efff] p-1.5"
+                >
+                  <FontAwesomeIcon icon={iconDef} className="h-6 w-6 text-[#6A5BC9]" />
+                </span>
+              );
             })}
           </div>
         </div>

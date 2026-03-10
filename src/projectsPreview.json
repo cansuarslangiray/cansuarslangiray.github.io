@@ -3,7 +3,7 @@
     "id": 101,
     "title": "Kiss Cargo",
     "description": "A multiplayer cooperative adventure where I delivered core gameplay systems and implemented them to run reliably with Normcore networking at Blay Games.",
-    "thumbnail": "/image/Project/KissCargo/kisscargo1.gif",
+    "thumbnail": "/image/Project/KissCargo/kisscargo2.png",
     "tags": [
       "All",
       "Games"
@@ -15,9 +15,7 @@
       "Normcore",
       "Company Project"
     ],
-    "platforms": [
-      "steam"
-    ],
+    "platforms": [],
     "platformLinks": {
       "steam": "https://store.steampowered.com/app/4277540/Kiss_Cargo/"
     }
@@ -26,7 +24,7 @@
     "id": 102,
     "title": "GOKA Street",
     "description": "A multiplayer football-driven mobile and PC title where I implemented progression, UI, and backend transition systems at Blay Games.",
-    "thumbnail": "/image/Project/GOKA/goka1.gif",
+    "thumbnail": "/image/Project/GOKA/goka2.PNG",
     "tags": [
       "All",
       "Games"
@@ -52,15 +50,17 @@
   {
     "id": 103,
     "title": "AR Mobile Application (TÜBİTAK Project)",
-    "description": "An App Store-published AR mobile application that I led end-to-end during my TÜBİTAK project collaboration.",
+    "description": "A Unity-based AR mobile game published on the App Store that I implemented end-to-end during my TÜBİTAK project collaboration.",
     "thumbnail": "/image/Project/tubitak/yesilova1.jpg",
     "tags": [
       "All",
-      "Applications"
+      "Games"
     ],
     "techTags": [
+      "Unity",
+      "C#",
       "AR",
-      "Mobile App",
+      "Mobile Game",
       "Company Project"
     ],
     "platforms": [

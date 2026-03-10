@@ -3,7 +3,8 @@ import AboutSection from "@/app/components/AboutSection";
 import ProjectSection from "@/app/components/ProjectSection";
 import EmailSection from "@/app/components/EmailSection";
 import Footer from "@/app/components/Footer";
-import projectsData from "@/projectsPreview.json";
+import projectsData from "@/projects.json";
+import fullProjectsData from "@/projects.json";
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
       <Navbar />
       <div className="container mx-auto px-5 pt-28 pb-10 md:px-10">
         <AboutSection />
-        <ProjectSection projectsData={projectsData} />
+        <ProjectSection projectsData={projectsData} fullProjectsData={fullProjectsData} />
         <EmailSection />
       </div>
       <Footer />

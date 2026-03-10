@@ -5,8 +5,8 @@
     "headerOne": "My Responsibilities",
     "headerTwo": "Core Systems Delivered",
     "description": "A multiplayer cooperative adventure where I delivered core gameplay systems and implemented them to run reliably with Normcore networking at Blay Games.",
-    "thumbnail": "/image/Project/KissCargo/kisscargo1.gif",
-    "imageOne": "/image/Project/KissCargo/kisscargo2.png",
+    "thumbnail": "/image/Project/KissCargo/kisscargo2.png",
+    "imageOne": "/image/Project/KissCargo/kisscargo1.gif",
     "textOne": "At Blay Games, I worked on Kiss Cargo as a gameplay programmer and systems contributor. I owned multiple player-side and game-critical systems, and implemented them to work reliably in multiplayer with Normcore synchronization.",
     "imageTwo": "/image/Project/KissCargo/kisscargo3.png",
     "textTwo": "Designed and implemented the Player State Manager and transition logic._Built responsive player reactions tied to state changes._Implemented the full trap system and related interactions._Developed the player stamina system and stamina-driven gameplay flow._Implemented the player ghost mode after death._Implemented the player ragdoll system._Implemented the princess stamina system and related balancing hooks.",
@@ -76,7 +76,8 @@
       "Multiplayer",
       "Normcore",
       "Firebase",
-      "Nakama"
+      "Nakama",
+      "Company Project"
     ],
     "platforms": [
       "steam",
@@ -84,7 +85,9 @@
       "appstore"
     ],
     "platformLinks": {
-      "steam": "https://store.steampowered.com/app/2776660/GOKA_Street/"
+      "steam": "https://store.steampowered.com/app/2776660/GOKA_Street/",
+      "googleplay": "https://play.google.com/store/apps/details?id=com.blay.goka&hl=tr",
+      "appstore": "https://apps.apple.com/tr/app/goka-street/id1595129335?l=tr"
     },
     "projectType": "company",
     "companyName": "Blay Games",
@@ -104,10 +107,10 @@
     "title": "AR Mobile Application (TÜBİTAK Project)",
     "headerOne": "My Responsibilities",
     "headerTwo": "Delivery Scope",
-    "description": "An App Store-published AR mobile application that I led end-to-end during my TÜBİTAK project collaboration.",
+    "description": "A Unity-based AR mobile game published on the App Store that I implemented end-to-end during my TÜBİTAK project collaboration.",
     "thumbnail": "/image/Project/tubitak/yesilova1.jpg",
     "imageOne": "/image/Project/tubitak/yesilova1.jpg",
-    "textOne": "This AR project was developed under TÜBİTAK, in collaboration with Assoc. Prof. Ayşegül. Project planning and design were prepared by Assoc. Prof. Ayşegül, and I implemented the full development process end-to-end based on that design direction.",
+    "textOne": "This Unity AR game project was developed under TÜBİTAK, in collaboration with Assoc. Prof. Ayşegül. Project planning and design were prepared by Assoc. Prof. Ayşegül, and I implemented the full development process end-to-end based on that design direction.",
     "imageTwo": "/image/Project/tubitak/yesilova2.jpg",
     "textTwo": "Implemented the complete application according to the provided planning and design framework._Built the core AR flow and application architecture in line with project requirements._Executed feature implementation, integration, testing, and iteration cycles._Handled production integration tasks and release preparation.",
     "imageThree": "/image/Project/tubitak/yesilova3.jpg",
@@ -118,12 +121,14 @@
     "storeURL": "",
     "tags": [
       "All",
-      "Applications"
+      "Games"
     ],
     "gitUrl": "",
     "techTags": [
+      "Unity",
+      "C#",
       "AR",
-      "Mobile App",
+      "Mobile Game",
       "Company Project"
     ],
     "platforms": [
@@ -260,7 +265,6 @@
       "Game"
     ],
     "platforms": [
-      "steam"
     ]
   },
   {

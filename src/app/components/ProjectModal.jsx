@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
 const ProjectModal = ({ project, onClose }) => {
+  const toItems = (value) => (typeof value === "string" ? value.split("_").filter(Boolean) : []);
+
   useEffect(() => {
     const handleEsc = (event) => {
       if (event.key === "Escape") {
@@ -76,7 +78,7 @@ const ProjectModal = ({ project, onClose }) => {
                     <div className="text-part">
                       <h3 className="headings">{project.headerOne}</h3>
                       <ul className="list-disc space-y-1 pl-5 text-sm leading-7 text-[#4d4d52]">
-                        {project.textTwo.split("_").map((feature, index) => (
+                        {toItems(project.textTwo).map((feature, index) => (
                           <li key={index}>{feature}</li>
                         ))}
                       </ul>
@@ -87,7 +89,7 @@ const ProjectModal = ({ project, onClose }) => {
                     <div className="text-part">
                       <h3 className="headings">{project.headerTwo}</h3>
                       <ul className="list-disc space-y-1 pl-5 text-sm leading-7 text-[#4d4d52]">
-                        {project.textThree.split("_").map((step, index) => (
+                        {toItems(project.textThree).map((step, index) => (
                           <li key={index}>{step}</li>
                         ))}
                       </ul>

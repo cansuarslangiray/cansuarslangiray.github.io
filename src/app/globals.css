@@ -26,6 +26,12 @@ body {
   margin: 0;
   background: radial-gradient(circle at top, #ffffff 0%, var(--background) 58%);
   color: var(--text);
+  text-rendering: optimizeLegibility;
+}
+
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 720px;
 }
 
 h1,
@@ -252,5 +258,20 @@ p {
 
   .grid-row .text-part {
     flex: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

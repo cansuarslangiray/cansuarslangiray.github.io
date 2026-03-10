@@ -1,16 +1,15 @@
 "use client";
 
-import React, { useEffect, useMemo, useState } from "react";
-import dynamic from "next/dynamic";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import ProjectCard from "@/app/components/ProjectCard";
-const ProjectModal = dynamic(() => import("@/app/components/ProjectModal"), { ssr: false });
+import ProjectModal from "@/app/components/ProjectModal";
 
-const ProjectSection = ({ projectsData }) => {
+const ProjectSection = ({ projectsData, fullProjectsData = [], certificateData = [] }) => {
   const [activeView, setActiveView] = useState("projects");
   const [tag, setTag] = useState("All");
   const [selectedProject, setSelectedProject] = useState(null);
-  const [isProjectLoading, setIsProjectLoading] = useState(false);
-  const [certificateData, setCertificateData] = useState(null);
+  const [certificates, setCertificates] = useState(certificateData);
+  const [isCertificatesLoading, setIsCertificatesLoading] = useState(false);
 
   useEffect(() => {
     const handleTabChange = (event) => {
@@ -24,10 +23,48 @@ const ProjectSection = ({ projectsData }) => {
   }, []);
 
   useEffect(() => {
-    if (activeView === "certificates" && !certificateData) {
-      import("@/certificates.json").then((module) => setCertificateData(module.default));
+    if (activeView !== "certificates" || certificates.length > 0 || isCertificatesLoading) {
+      return;
     }
-  }, [activeView, certificateData]);
+
+    const loadCertificates = async () => {
+      setIsCertificatesLoading(true);
+      try {
+        const response = await fetch("/data/certificates.json", { cache: "force-cache" });
+        if (response.ok) {
+          const data = await response.json();
+          if (Array.isArray(data)) {
+            setCertificates(data);
+          }
+        }
+      } finally {
+        setIsCertificatesLoading(false);
+      }
+    };
+
+    loadCertificates();
+  }, [activeView, certificates.length, isCertificatesLoading]);
+
+  const projectMap = useMemo(
+    () => new Map(projectsData.map((project) => [project.id, project])),
+    [projectsData],
+  );
+  const fullProjectMap = useMemo(
+    () => new Map(fullProjectsData.map((project) => [project.id, project])),
+    [fullProjectsData],
+  );
+
+  const normalizeProjectForModal = useCallback((project) => ({
+    ...project,
+    headerOne: project.headerOne ?? "Details",
+    headerTwo: project.headerTwo ?? "Additional Information",
+    textOne: project.textOne ?? project.description ?? "",
+    textTwo: project.textTwo ?? "Details will be available soon.",
+    textThree: project.textThree ?? "Details will be available soon.",
+    imageOne: project.imageOne ?? project.thumbnail,
+    imageTwo: project.imageTwo ?? project.thumbnail,
+    imageThree: project.imageThree ?? project.thumbnail,
+  }), []);
 
   const filteredProjects = useMemo(() => {
     if (tag === "All") {
@@ -42,7 +79,7 @@ const ProjectSection = ({ projectsData }) => {
   const getProjectPreviewMeta = (project) => {
     const isGame = project.tags?.some((item) => item.toLowerCase() === "games");
     const fallbackTech = isGame ? ["Unity", "C#", "Game"] : ["Java", "JavaFX", "Desktop App"];
-    const fallbackPlatform = isGame ? ["steam"] : ["gamestore"];
+    const fallbackPlatform = isGame ? ["steam"] : [];
 
     return {
       techTags: project.techTags ?? fallbackTech,
@@ -54,16 +91,10 @@ const ProjectSection = ({ projectsData }) => {
   const previewText = (description) =>
     description.includes(".") ? `${description.split(".")[0]}.` : description;
 
-  const openProjectDetails = async (projectId) => {
-    setIsProjectLoading(true);
-    try {
-      const projectsModule = await import("@/projects.json");
-      const fullProject = projectsModule.default.find((item) => item.id === projectId);
-      if (fullProject) {
-        setSelectedProject(fullProject);
-      }
-    } finally {
-      setIsProjectLoading(false);
+  const openProjectDetails = (projectId) => {
+    const fullProject = fullProjectMap.get(projectId) ?? projectMap.get(projectId);
+    if (fullProject) {
+      setSelectedProject(normalizeProjectForModal(fullProject));
     }
   };
 
@@ -100,7 +131,6 @@ const ProjectSection = ({ projectsData }) => {
 
       {activeView === "projects" && (
         <>
-          <p className="section-subtitle mb-6">Selected game and software projects I built and shipped.</p>
           <div className="mb-6 flex flex-wrap gap-2">
             {["All", "Games", "Applications"].map((item) => (
               <button
@@ -118,7 +148,7 @@ const ProjectSection = ({ projectsData }) => {
             ))}
           </div>
 
-          <ul className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <ul className="grid gap-5 md:grid-cols-2">
             {filteredProjects.map((project) => {
               const meta = getProjectPreviewMeta(project);
               return (
@@ -145,7 +175,7 @@ const ProjectSection = ({ projectsData }) => {
             Professional and academic certificates from recent programs and trainings.
           </p>
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {(certificateData ?? []).map((certificate) => (
+            {certificates.map((certificate) => (
               <a
                 key={certificate.name}
                 className="overflow-hidden rounded-3xl border border-[#e4dcf6] bg-white/95 shadow-[0_6px_16px_rgba(72,85,125,0.08)] transition-shadow duration-200 hover:shadow-[0_10px_22px_rgba(72,85,125,0.12)]"
@@ -168,18 +198,11 @@ const ProjectSection = ({ projectsData }) => {
               </a>
             ))}
           </div>
-          {!certificateData && <p className="text-sm text-[#6e6e73]">Loading certificates...</p>}
+          {isCertificatesLoading && <p className="text-sm text-[#6e6e73]">Loading certificates...</p>}
         </>
       )}
 
       {selectedProject && <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />}
-      {isProjectLoading && !selectedProject && (
-        <div className="fixed inset-0 z-40 grid place-items-center bg-black/25">
-          <div className="rounded-xl bg-white px-5 py-3 text-sm font-medium text-[#4d4d52]">
-            Loading project details...
-          </div>
-        </div>
-      )}
     </section>
   );
 };
