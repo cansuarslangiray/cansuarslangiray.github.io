@@ -1,31 +1,31 @@
 "use client";
 
 import React from "react";
+import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/solid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const contactItems = [
   {
-    icon: faEnvelope,
+    icon: "email",
     label: "Email",
     value: "cansuarslangiray@gmail.com",
     href: "mailto:cansuarslangiray@gmail.com",
   },
   {
-    icon: faPhone,
+    icon: "phone",
     label: "Phone",
     value: "+90 552 746 41 86",
     href: "tel:+905527464186",
   },
   {
-    icon: faGithub,
+    icon: "github",
     label: "GitHub",
     value: "github.com/cansuarslangiray",
     href: "https://github.com/cansuarslangiray",
   },
   {
-    icon: faLinkedin,
+    icon: "linkedin",
     label: "LinkedIn",
     value: "linkedin.com/in/cansu-arslangiray",
     href: "https://www.linkedin.com/in/cansu-arslangiray/",
@@ -50,7 +50,14 @@ const EmailSection = () => {
             className="glass-card flex items-center gap-4 p-5 transition-colors hover:bg-[#fafafa]"
           >
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#eef5ff] text-[#007aff]">
-              <FontAwesomeIcon icon={item.icon} />
+              {item.icon === "email" && <EnvelopeIcon className="h-5 w-5" />}
+              {item.icon === "phone" && <PhoneIcon className="h-5 w-5" />}
+              {item.icon === "github" && (
+                <FontAwesomeIcon icon={faGithub} className="h-5 w-5 text-[#007aff]" />
+              )}
+              {item.icon === "linkedin" && (
+                <FontAwesomeIcon icon={faLinkedin} className="h-5 w-5 text-[#007aff]" />
+              )}
             </div>
             <div>
               <p className="text-sm font-semibold text-[#4d4d52]">{item.label}</p>

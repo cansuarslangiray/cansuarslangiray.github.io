@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSteam, faAppStoreIos, faGooglePlay } from "@fortawesome/free-brands-svg-icons";
 import { faStore } from "@fortawesome/free-solid-svg-icons";
@@ -21,19 +20,28 @@ const chipClass = (tag) => {
 };
 
 const ProjectCard = ({ imgUrl, title, description, techTags = [], platforms = [], platformLinks = {}, click }) => {
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      click();
+    }
+  };
+
   return (
-    <button
+    <div
       onClick={click}
-      type="button"
-      className="group w-full overflow-hidden rounded-3xl border border-[#e4dcf6] bg-white/95 text-left shadow-[0_10px_26px_rgba(72,85,125,0.09)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_34px_rgba(72,85,125,0.14)]"
+      onKeyDown={handleKeyDown}
+      role="button"
+      tabIndex={0}
+      className="w-full overflow-hidden rounded-3xl border border-[#e4dcf6] bg-white/95 text-left shadow-[0_6px_16px_rgba(72,85,125,0.08)] transition-shadow duration-200 hover:shadow-[0_10px_22px_rgba(72,85,125,0.12)]"
     >
-      <div className="relative h-[190px] w-full overflow-hidden border-b border-[#eee7fb] bg-[#f8fafc] sm:h-[210px]">
-        <Image
+      <div className="h-[190px] w-full overflow-hidden border-b border-[#eee7fb] bg-[#f8fafc] sm:h-[210px]">
+        <img
           src={imgUrl}
           alt={title}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="h-full w-full object-cover"
+          loading="lazy"
+          decoding="async"
         />
       </div>
       <div className="space-y-3 p-5">
@@ -58,7 +66,7 @@ const ProjectCard = ({ imgUrl, title, description, techTags = [], platforms = []
                     href={href}
                     target="_blank"
                     rel="noreferrer"
-                    className="transition-transform duration-200 hover:scale-110"
+                    className="inline-flex"
                     onClick={(event) => event.stopPropagation()}
                     aria-label={platform}
                   >
@@ -76,7 +84,7 @@ const ProjectCard = ({ imgUrl, title, description, techTags = [], platforms = []
           More info
         </p>
       </div>
-    </button>
+    </div>
   );
 };
 
