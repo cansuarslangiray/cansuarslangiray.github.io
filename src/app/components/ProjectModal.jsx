@@ -1,159 +1,109 @@
 import React, { useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 
 const ProjectModal = ({ project, onClose }) => {
-    // Handle closing the modal when pressing the escape key
-    useEffect(() => {
-        const handleEsc = (event) => {
-            if (event.keyCode === 27) {
-                onClose();
-            }
-        };
-
-        window.addEventListener("keydown", handleEsc);
-
-        return () => {
-            window.removeEventListener("keydown", handleEsc);
-        };
-    }, [onClose]);
-
-    const handleClickInsideModal = (event) => {
-        // Prevent click event propagation to parent elements
-        event.stopPropagation();
+  useEffect(() => {
+    const handleEsc = (event) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
     };
 
-    return (
-        <Transition.Root show={true} as={React.Fragment}>
-            <Dialog
-                as="div"
-                className="fixed z-50 inset-0 overflow-y-auto"
-                onClose={onClose}
-            >
-                <div onClick={onClose} className="flex items-center justify-center h-screen">
-                    <Transition.Child
-                        as={React.Fragment}
-                        enter="ease-out duration-300"
-                        enterFrom="opacity-0"
-                        enterTo="opacity-100"
-                        leave="ease-in duration-200"
-                        leaveFrom="opacity-100"
-                        leaveTo="opacity-0"
-                    >
-                        <Dialog.Overlay  className="fixed -z-10 inset-0 bg-black opacity-30" />
-                    </Transition.Child>
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, [onClose]);
 
-                    <Transition.Child
-                        as={React.Fragment}
-                        enter="ease-out duration-300"
-                        enterFrom="opacity-0 scale-95"
-                        enterTo="opacity-100 scale-100"
-                        leave="ease-in duration-200"
-                        leaveFrom="opacity-100 scale-100"
-                        leaveTo="opacity-0 scale-95"
-                    >
-                        <div className="modal-container" onClick={handleClickInsideModal}>
-                            <div className="modal-content">
-                                <h1 className="project-title">
-                                    {project.title}
-                                    {!project.hasVideo && (
-                                        <a href={project.gitUrl} className="flex" target="_blank">
-                                             <FontAwesomeIcon icon={faGithub} className="noStore"/>
-                                        </a>
-                                    )}
-                                </h1>
-                                <div style={{paddingTop: "20px"}} className="grid-layout">
-                                    {project.hasVideo && (
-                                        <div className="grid-row">
-                                            <div className="text-part">
-                                                <div className="plyr__video-embed" id="player">
-                                                    <iframe
-                                                        src={project.safeURL}
-                                                        allowFullScreen
-                                                        allowTransparency
-                                                        allow="autoplay"
-                                                    ></iframe>
-                                                </div>
-                                            </div>
-                                            <div className="image-part">
-                                                <div className="github-icons">
-                                                    <a
-                                                        className="github-icon left"
-                                                        href={project.repoLink}
-                                                        target="_blank"
-                                                    >
-                                                        <img
-                                                            src="next.svg"
-                                                            alt="Hello"
-                                                            className="icon"
-                                                        />
-                                                    </a>
-                                                    {project.hasStore && (
-                                                        <a
-                                                            className="github-icon right"
-                                                            href={project.storeUrl}
-                                                            target="_blank"
-                                                        >
-                                                            <img
-                                                                src="assets/gp.png"
-                                                                alt=""
-                                                                className="icon"
-                                                            />
-                                                        </a>
-                                                    )}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    )}
-                                    <div className="grid-row">
-                                        <div className="text-part">
-                                            <h3 className="headings">Description</h3>
-                                            <p>{project.textOne}</p>
-                                        </div>
-                                        <div className="image-part">
-                                            <img src={project.imageOne} alt="Description Image"/>
-                                        </div>
-                                    </div>
-                                    <div className="grid-row">
-                                        <div className="image-part">
-                                            <img src={project.imageTwo} alt="Features Image"/>
-                                        </div>
-                                        <div className="text-part">
-                                            <h3 className="headings">{project.headerOne}</h3>
-                                            <ul style={{listStyleType:"circle"}}>
-                                            
-                                                {project.textTwo.split("_").map((feature, index) => (
-                                                    <li key={index}>{feature}</li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div className="grid-row">
-                                        <div className="text-part">
-                                            <h3 className="headings">{project.headerTwo}</h3>
-                                            <ul>
-                                                {project.textThree.split("_").map((step, index) => (
-                                                    <li key={index}>{step}</li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                        <div className="image-part">
-                                            <img
-                                                src={project.imageThree}
-                                                alt="How to Play Image"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+  return (
+    <Transition.Root show as={React.Fragment}>
+      <Dialog as="div" className="fixed inset-0 z-50 overflow-y-auto" onClose={onClose}>
+        <div className="flex min-h-screen items-center justify-center p-4" onClick={onClose}>
+          <Transition.Child
+            as={React.Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <Dialog.Overlay className="fixed inset-0 bg-black/40" />
+          </Transition.Child>
 
-                        </div>
-                    </Transition.Child>
+          <Transition.Child
+            as={React.Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0 scale-95"
+            enterTo="opacity-100 scale-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100 scale-100"
+            leaveTo="opacity-0 scale-95"
+          >
+            <div className="modal-container relative z-10" onClick={(event) => event.stopPropagation()}>
+              <div className="modal-content">
+                <h2 className="project-title">
+                  {project.title}
+                </h2>
+                {project.projectType === "company" && (
+                  <div className="mt-3 rounded-2xl border border-[#ddd2f8] bg-[#f8f4ff] p-4">
+                    <p className="text-sm font-semibold text-[#4f3a86]">
+                      Company Project: {project.companyName ?? "Company"}
+                    </p>
+                    {Array.isArray(project.companyResponsibilities) && project.companyResponsibilities.length > 0 && (
+                      <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-[#4d4d52]">
+                        {project.companyResponsibilities.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                )}
+
+                <div className="grid-layout">
+                  <div className="grid-row">
+                    <div className="text-part">
+                      <h3 className="headings">Description</h3>
+                      <p className="text-sm leading-7 text-[#4d4d52]">{project.textOne}</p>
+                    </div>
+                    <div className="image-part">
+                      <img src={project.imageOne} alt="Project detail" loading="lazy" decoding="async" />
+                    </div>
+                  </div>
+
+                  <div className="grid-row">
+                    <div className="image-part">
+                      <img src={project.imageTwo} alt="Project features" loading="lazy" decoding="async" />
+                    </div>
+                    <div className="text-part">
+                      <h3 className="headings">{project.headerOne}</h3>
+                      <ul className="list-disc space-y-1 pl-5 text-sm leading-7 text-[#4d4d52]">
+                        {project.textTwo.split("_").map((feature, index) => (
+                          <li key={index}>{feature}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="grid-row">
+                    <div className="text-part">
+                      <h3 className="headings">{project.headerTwo}</h3>
+                      <ul className="list-disc space-y-1 pl-5 text-sm leading-7 text-[#4d4d52]">
+                        {project.textThree.split("_").map((step, index) => (
+                          <li key={index}>{step}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="image-part">
+                      <img src={project.imageThree} alt="Project gameplay" loading="lazy" decoding="async" />
+                    </div>
+                  </div>
                 </div>
-            </Dialog>
-        </Transition.Root>
-    );
+              </div>
+            </div>
+          </Transition.Child>
+        </div>
+      </Dialog>
+    </Transition.Root>
+  );
 };
 
 export default ProjectModal;

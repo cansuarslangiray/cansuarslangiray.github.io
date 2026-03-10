@@ -1,62 +1,40 @@
 "use client";
+
 import React from "react";
-import Image from "next/image";
-
-import { TypeAnimation } from 'react-type-animation';
-import { motion } from "framer-motion";
-
 
 const HeroSection = () => {
-    return (
-        <section className={"lg:py-16"} id="about" >
+  return (
+    <section id="about" className="mb-12 grid gap-8 rounded-[22px] border border-[#d2d2d7] bg-white p-7 shadow-[0_8px_24px_rgba(15,23,42,0.08)] sm:p-10 lg:grid-cols-12">
+      <div className="lg:col-span-8">
+        <p className="mb-4 inline-flex rounded-full border border-[#c8d8f8] bg-[#eef5ff] px-4 py-1 text-sm font-semibold text-[#1f4f97]">
+          Game Developer Portfolio
+        </p>
+        <h1 className="mb-4 text-4xl font-extrabold leading-tight text-[#1d1d1f] sm:text-5xl lg:text-6xl">
+          Cansu Arslangiray
+        </h1>
+        <p className="mb-8 max-w-3xl text-base leading-8 text-[#6e6e73] sm:text-lg">
+          Computer Engineering student focused on game development, gameplay systems, and player-centered design.
+          I build projects with Unity, C#, and modern tooling while continuously improving through real game
+          production.
+        </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-12">
-                <motion.div initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }} className="col-span-8 place-self-center text-center sm:text-left justify-self-start">
-                    <h1 className="text-black mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
-                        <span className={"text-transparent bg-clip-text bg-gradient-to-r from-[#FFAFCC] to-[#A2D2FF]"}>
-                            {/* eslint-disable-next-line react/no-unescaped-entities */}
-                            Hello, I'm {""}
-                        </span>
-                        <br>
-                        </br>
-                        <TypeAnimation
-                            sequence={[
-                                // Same substring at the start will only be typed out once, initially
-                                'Cansu',
-                                1000, // wait 1s before replacing "Mice" with "Hamsters"
-                                'a Game Developer',
-                                1000,
-                                'a 2D pixel artist ',
-                                1000
-                            ]}
-                            wrapper="span"
-                            speed={50}
-                            repeat={Infinity}
-                        />
-                    </h1>
-                    <p className="text-[#ADB7BE] text-gray-600 sm:text-lg mb-6 lf:text-xl">
-                        I am a third-year computer engineering student in Izmir University of Economics who is into game development. Below you can find more information about me, and the projects I have worked on.
-                    </p>
-                    <div>
-                        <button
-                            className={"px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-[#FFD6FF] via-[#C8B6FF] to to-[#BBD0FF] hover:bg-slate-800 text-white"}>
-                            <span className={"transition-colors duration-200 block hover:bg-slate-50 hover:bg-opacity-30 rounded-full px-5 py-2"}>
-                                <a className="text-black" href={"https://drive.google.com/file/d/1TUHDE9_DIqFEg32eut-zWrMNGKKr9gg5/view?usp=sharing"}target="_blank">Download CV</a>
-                            </span>
-                        </button>
-                    </div>
-                </motion.div>
-                <div className="col-span-4 place-self-center mt-4 lg:mt-0">
-                    <div className={"rounded-full bg-[#FFAFCC] w-[350px] h-[350px] lg:w-[300px] lg:h-[300px] relative"}>
-                        <img style={{ width: "250px", height: "250px", borderRadius: "50%" }}
-                            src={"/image/me.jpg"}
-                            alt={"hero image"}
-                            className={"absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"}>
-                        </img>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+        <div className="flex flex-wrap gap-3">
+          <a className="btn-primary" href="/CansuArslangiray.pdf" target="_blank" rel="noreferrer">
+            Download CV
+          </a>
+          <a className="btn-secondary" href="#contact">
+            Contact Me
+          </a>
+        </div>
+      </div>
+
+      <div className="flex items-center justify-center lg:col-span-4">
+        <div className="relative h-[250px] w-[250px] overflow-hidden rounded-full border-8 border-[#f0f6ff] bg-[#eaf3ff] sm:h-[290px] sm:w-[290px]">
+          <img src="/image/me.jpg" alt="Cansu Arslangiray" className="h-full w-full object-cover" />
+        </div>
+      </div>
+    </section>
+  );
 };
+
 export default HeroSection;

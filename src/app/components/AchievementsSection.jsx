@@ -1,61 +1,36 @@
 "use client";
+
 import React from "react";
-import dynamic from "next/dynamic";
-
-
-const AnimatedNumbers = dynamic(() => {
-    return import("react-animated-numbers");
-}, {ssr:false});
-
-const achievementList = [
-    {
-        metric: "Games",
-        value: "15",
-        postfix: "+",
-    },
-    {
-        metric: "Applications",
-        value: "3",
-    },
-];
+import certificateData from "@/certificates.json";
 
 const AchievementsSection = () => {
-    return (
-        <div className={"py-8 px-4 xl:gap-16 sm:py-16 xl:px-16"}>
-            <div className={"border-[#abc4ff] border rounded-md py-8 px-16 flex flex-row items-center justify-around"} style={{
-                borderWidth: "4px",
-                borderRadius: "16px"
-            }}>
-                {
-                    achievementList.map((achievement, index) => {
-                        return (
-                            <div key={index} className={"flex flex-col items-center justify-center mx-4"}
-                            >
-                                <h2 className={"text-[#abc4ff] text-4xl font-bold flex flex-row"}>
-                                    {achievement.prefix}
-                                    <AnimatedNumbers
-                                        includeComma
-                                        animateToNumber={parseInt(achievement.value)}
-                                        locale={"en-US"}
-                                        className={"text-[#abc4ff] text-4xl font-bold"}
-                                        configs={(_,index)=> {
-                                            return{
-                                                mass: 1,
-                                                friction: 100,
-                                                tensions: 140 *(index +1),
-                                            };
-                                        }}
-                                        />
-                                    {achievement.postfix}
-                                </h2>
-                                <p className={"text-[#ADB7BE] text-gray-600"}>{achievement.metric}</p>
-                            </div>
-                        );
-                    })
-                }
-            </div>
-        </div>
-    )
-}
+  const certificates = certificateData.slice(0, 9);
 
-export default AchievementsSection
+  return (
+    <section id="certificates" className="mb-14">
+      <h2 className="section-heading mb-2">Certificates</h2>
+      <p className="section-subtitle mb-6">Professional and academic certificates from recent programs and trainings.</p>
+
+      <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {certificates.map((certificate) => (
+          <a
+            key={certificate.name}
+            className="overflow-hidden rounded-2xl border border-[#d2d2d7] bg-white shadow-[0_6px_20px_rgba(15,23,42,0.08)] transition-transform duration-200 hover:-translate-y-1"
+            href={certificate.url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className="h-[165px] overflow-hidden border-b border-[#e5e7eb] bg-[#f8fafc] sm:h-[190px]">
+              <img src={certificate.imagePath} alt={certificate.name} className="h-full w-full object-cover" />
+            </div>
+            <div className="p-4">
+              <h3 className="line-clamp-2 text-sm font-semibold leading-6 text-[#1d1d1f]">{certificate.name}</h3>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default AchievementsSection;

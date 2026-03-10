@@ -1,17 +1,19 @@
 import React from "react";
 
-const ProjectTag = ({name, click, isSelected}) => {
-    const buttonStyles = isSelected
-        ? " border-gray-400 bg-gradient-to-br from-[#FFD6FF] via-[#C8B6FF] to to-[#BBD0FF] text-black"
-        : " border-gray-200 text-black";
-    return (
-        <button
-            className={`${buttonStyles} transition-colors duration-400 px-1 py-1 w-full sm:w-fit rounded-full hover:bg-gradient-to-br from-[#FFD6FF] via-[#C8B6FF] to to-[#BBD0FF]  rounded-full border-2   px-6 py-3 text-xl cursor-pointer `}
-            onClick={click}
-        >
-            {name}
-        </button>
-    );
+const ProjectTag = ({ name, onClick, isSelected }) => {
+  const classes = isSelected
+    ? "border-[#007aff] bg-[#007aff] text-white"
+    : "border-[#d2d2d7] bg-white text-[#4d4d52] hover:bg-[#f5f5f7]";
+
+  return (
+    <button
+      className={`${classes} rounded-full border px-4 py-2 text-sm font-semibold transition-colors`}
+      onClick={() => onClick(name)}
+      type="button"
+    >
+      {name}
+    </button>
+  );
 };
 
 export default ProjectTag;
