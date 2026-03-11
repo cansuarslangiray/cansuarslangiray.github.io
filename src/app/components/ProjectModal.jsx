@@ -67,13 +67,13 @@ const ProjectModal = ({ project, onClose }) => {
                       <p className="text-sm leading-7 text-[#4d4d52]">{project.textOne}</p>
                     </div>
                     <div className="image-part">
-                      <img src={project.imageOne} alt="Project detail" loading="lazy" decoding="async" />
+                      <img src={project.imageOne} alt="Project detail" loading="lazy" decoding="async" fetchPriority="low" />
                     </div>
                   </div>
 
                   <div className="grid-row">
                     <div className="image-part">
-                      <img src={project.imageTwo} alt="Project features" loading="lazy" decoding="async" />
+                      <img src={project.imageTwo} alt="Project features" loading="lazy" decoding="async" fetchPriority="low" />
                     </div>
                     <div className="text-part">
                       <h3 className="headings">{project.headerOne}</h3>
@@ -95,7 +95,7 @@ const ProjectModal = ({ project, onClose }) => {
                       </ul>
                     </div>
                     <div className="image-part">
-                      <img src={project.imageThree} alt="Project gameplay" loading="lazy" decoding="async" />
+                      <img src={project.imageThree} alt="Project gameplay" loading="lazy" decoding="async" fetchPriority="low" />
                     </div>
                   </div>
                 </div>
