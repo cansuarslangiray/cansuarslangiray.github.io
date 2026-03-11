@@ -2,31 +2,23 @@
   {
     "id": 100,
     "title": "BlockBlast",
-    "headerOne": "Features",
-    "headerTwo": "How to Play",
-    "description": "Blast your way through a colorful, obstacle-packed puzzle adventure by tapping matching cubes, triggering combos, and clearing objectives before moves run out.",
+    "headerOne": "Development Focus",
+    "headerTwo": "Technical Implementation",
+    "description": "I developed a high-performance, grid-based puzzle engine in Unity, focusing on efficient object pooling, complex combo logic, and a data-driven level system to ensure a smooth 'tap-to-blast' experience.",
     "thumbnail": "/image/Project/BlockBlast/blockblast1.png",
     "imageOne": "/image/Project/BlockBlast/blockblast1.png",
-    "textOne": "Blast your way through a colorful, obstacle-packed puzzle adventure. Tap groups of matching cubes to clear the board, trigger powerful chain reactions, and complete level goals before you run out of moves. Create and combine special items like Rockets and TNT to break through tough blockers and solve each level with smart strategy.",
+    "textOne": "I built BlockBlast to master the mechanics of modern casual puzzle games. I implemented a robust grid system that handles color-matching logic and recursive 'blast' algorithms. My goal was to create a satisfying game feel through snappy animations and well-timed chain reactions using DOTween for all movement and scaling effects.",
     "imageTwo": "/image/Project/BlockBlast/video.gif",
-    "textTwo": "Fast, satisfying tap-to-blast puzzle gameplay_Data-driven level system with unique layouts and objectives_Multiple obstacle types, including Boxes, Stones, and Vases_Special items: Rocket (Horizontal/Vertical) and TNT_Special combinations for bigger explosions: TNT + TNT for massive area damage, Rocket + Rocket for row-and-column clears, TNT + Rocket for cross-shaped destruction_Smooth cascade and gravity-based refill system_Deterministic, optimized board simulation for stable performance_Clean level progression with win/lose states and move limits",
+    "textTwo": "I designed a data-driven level system that allows for unique layouts and objectives without hardcoding._I implemented custom Special Item logic for Rockets and TNT, including a complex 'combination' system (e.g., TNT + Rocket cross-clears)._To ensure mobile performance, I used a specialized ParticlePoolManager for zero-allocation visual effects during heavy explosions._I also built a deterministic board refill system with gravity-based physics to maintain game state consistency.",
     "imageThree": "/image/Project/BlockBlast/blockblast2.png",
-    "textThree": "Tap a group of 2 or more adjacent cubes of the same color to blast them._Clear required objectives (such as Boxes, Stones, Vases, or color targets)._Use moves wisely, because each valid tap consumes one move._Build larger groups to spawn specials: bigger groups create Rockets, even bigger groups create TNT._Tap special items to activate them, or combine adjacent specials for stronger effects._Finish all objectives before your moves reach zero to complete the level.",
+    "textThree": "The core of my implementation relies on an efficient adjacent-search algorithm to detect matching cubes._I integrated a 'Move Limit' and 'Objective Tracker' system that monitors player progress in real-time._I focused heavily on the UI/UX flow, ensuring that spawning specials feels rewarding through dynamic particle triggers and smooth UI Toolkit transitions.",
     "hasVideo": false,
     "videoID": "",
     "hasStore": false,
     "storeURL": "",
-    "tags": [
-      "All",
-      "Games"
-    ],
+    "tags": ["All", "Games"],
     "gitUrl": "",
-    "techTags": [
-      "Unity",
-      "C#",
-      "Mobile Game",
-      "Puzzle Game"
-    ],
+    "techTags": ["Unity", "C#", "Mobile Game", "Puzzle Game"],
     "platforms": [],
     "platformLinks": {}
   },
@@ -47,21 +39,10 @@
     "videoID": "",
     "hasStore": true,
     "storeURL": "https://store.steampowered.com/app/4277540/Kiss_Cargo/",
-    "tags": [
-      "All",
-      "Games"
-    ],
+    "tags": ["All", "Games"],
     "gitUrl": "",
-    "techTags": [
-      "Unity",
-      "C#",
-      "Multiplayer",
-      "Normcore",
-      "Company Project"
-    ],
-    "platforms": [
-      "steam"
-    ],
+    "techTags": ["Unity", "C#", "Multiplayer", "Normcore", "Company Project"],
+    "platforms": ["steam"],
     "platformLinks": {
       "steam": "https://store.steampowered.com/app/4277540/Kiss_Cargo/"
     },
@@ -97,26 +78,10 @@
     "videoID": "",
     "hasStore": true,
     "storeURL": "https://store.steampowered.com/app/2776660/GOKA_Street/",
-    "tags": [
-      "All",
-      "Games"
-    ],
+    "tags": ["All", "Games"],
     "gitUrl": "",
-    "techTags": [
-      "Unity",
-      "C#",
-      "Mobile Game",
-      "Multiplayer",
-      "Normcore",
-      "Firebase",
-      "Nakama",
-      "Company Project"
-    ],
-    "platforms": [
-      "steam",
-      "googleplay",
-      "appstore"
-    ],
+    "techTags": ["Unity", "C#", "Mobile Game", "Multiplayer", "Normcore", "Firebase", "Nakama", "Company Project"],
+    "platforms": ["steam", "googleplay", "appstore"],
     "platformLinks": {
       "steam": "https://store.steampowered.com/app/2776660/GOKA_Street/",
       "googleplay": "https://play.google.com/store/apps/details?id=com.blay.goka&hl=tr",
@@ -142,33 +107,22 @@
     "title": "AR Mobile Application (TÜBİTAK Project)",
     "headerOne": "My Responsibilities",
     "headerTwo": "Delivery Scope",
-    "description": "A Unity-based AR mobile game published on the App Store that I implemented end-to-end during my TÜBİTAK project collaboration.",
+    "description": "I engineered this Unity-based AR mobile application from scratch as part of a TÜBİTAK collaboration, focusing on real-world environment tracking and interactive AR gameplay mechanics.",
     "thumbnail": "/image/Project/tubitak/yesilova1.jpg",
     "imageOne": "/image/Project/tubitak/yesilova1.jpg",
-    "textOne": "This Unity AR game project was developed under TÜBİTAK, in collaboration with Assoc. Prof. Ayşegül. Project planning and design were prepared by Assoc. Prof. Ayşegül, and I implemented the full development process end-to-end based on that design direction.",
+    "textOne": "Working under the guidance of Assoc. Prof. Ayşegül, I took full responsibility for the technical execution of this AR project. I transformed the conceptual design into a functional, production-ready mobile application, managing the entire development lifecycle from AR foundation setup to App Store deployment.",
     "imageTwo": "/image/Project/tubitak/yesilova2.jpg",
-    "textTwo": "Implemented the complete application according to the provided planning and design framework._Built the core AR flow and application architecture in line with project requirements._Executed feature implementation, integration, testing, and iteration cycles._Handled production integration tasks and release preparation.",
+    "textTwo": "I built the core AR flow, ensuring stable image/plane tracking and object persistence within the mobile environment._I developed the application's architecture to handle real-time user interactions and gamified archaeological educational content._I independently managed the feature implementation, integration of 3D assets, and rigorous testing cycles.",
     "imageThree": "/image/Project/tubitak/yesilova3.jpg",
-    "textThree": "Delivered a production-ready mobile AR application for App Store distribution._Executed implementation milestones under TÜBİTAK project scope._Worked in close collaboration with Assoc. Prof. Ayşegül throughout development and validation._Completed final delivery and handoff based on the planned project roadmap.",
+    "textThree": "I successfully delivered a production-ready application for iOS, meeting all TÜBİTAK project milestones._Throughout the process, I maintained a close feedback loop with the academic lead to validate educational accuracy and technical performance._I handled the final production handoff and technical documentation for the project's long-term sustainability.",
     "hasVideo": false,
     "videoID": "",
     "hasStore": true,
     "storeURL": "",
-    "tags": [
-      "All",
-      "Games"
-    ],
+    "tags": ["All", "Games"],
     "gitUrl": "",
-    "techTags": [
-      "Unity",
-      "C#",
-      "AR",
-      "Mobile Game",
-      "Company Project"
-    ],
-    "platforms": [
-      "appstore"
-    ],
+    "techTags": ["Unity", "C#", "AR", "Mobile Game", "Company Project"],
+    "platforms": ["appstore"],
     "projectType": "company",
     "companyName": "TÜBİTAK",
     "companyResponsibilities": [
@@ -182,217 +136,155 @@
   {
     "id": 1,
     "title": "Zombie Farmer",
-    "headerOne": "Features",
-    "headerTwo": "How to Play",
-    "description": "In Zombie Farmer, you take on the role of a brave farmer whose fields have been invaded by zombies. Your objective is to eliminate the increasing number of zombies in each level to survive. However, you must do so within 30 seconds, or else you'll succumb to the undead!",
+    "headerOne": "Technical Overview",
+    "headerTwo": "Core Features Implemented",
+    "description": "I developed this fast-paced Top-Down Shooter to experiment with wave-based survival mechanics, enemy AI behavior, and tight combat loops within a time-constrained gameplay environment.",
     "thumbnail": "/image/Project/TopDownShooter/1.jpg",
     "imageOne": "/image/Project/TopDownShooter/4.jpg",
-    "textOne": "Welcome to Zombie Farmer! In this thrilling game, you step into the shoes of a courageous farmer whose peaceful fields have been overrun by hordes of zombies. Your mission is clear: eliminate the relentless onslaught of zombies to ensure your survival. But beware, time is not on your side! You must act swiftly and decisively, as you only have 30 seconds to rid your farm of these undead pests before they overwhelm you.",
+    "textOne": "In Zombie Farmer, I focused on creating an intense 30-second survival loop. I built the project to understand the balance between player movement speed and enemy horde density, ensuring that the 2D/3D combat felt responsive and the 'ticking clock' pressure was palpable for the user.",
     "imageTwo": "/image/Project/TopDownShooter/2.jpg",
-    "textTwo": "Fast-paced action: Engage in heart-pounding battles against waves of zombies as you strive to defend your farm._Increasing difficulty: Each level presents a greater challenge with more zombies to defeat within the time limit._Variety of weapons: Arm yourself with an arsenal of tools and weapons, from pitchforks to shotguns, to fend off the zombie horde._Strategic gameplay: Plan your attacks strategically to maximize efficiency and survival._Score system: Compete for the highest score by eliminating zombies quickly and efficiently._Atmospheric graphics and sound effects: Immerse yourself in the eerie atmosphere of the zombie-infested farm with stunning visuals and chilling sound effects.",
+    "textTwo": "I implemented a dynamic spawning system where zombie waves increase in difficulty as the player progresses._I built an extensible weapon system that allows for various attack types, from melee pitchforks to projectile-based shotguns._I integrated a global timer and score manager to drive player engagement and replayability through high-score chasing.",
     "imageThree": "/image/Project/TopDownShooter/5.jpg",
-    "textThree": "Objective: Your goal is to eliminate as many zombies as possible within the given time limit of 30 seconds._Controls: Use the arrow keys to move your character around the farm. Press the spacebar to attack or use weapons._Eliminate Zombies: Approach zombies and attack them using your selected weapon. Be quick and precise to take them down before they overwhelm you._Time Management: Keep an eye on the timer at the top of the screen. You must eliminate all zombies before the time runs out, or you'll become one of them!_Upgrade Weapons: As you progress through levels, unlock and upgrade new weapons to improve your chances of survival._Survive and Advance: Survive each level's onslaught of zombies to progress to the next, where the challenge intensifies.",
+    "textThree": "I developed the player controller using Unity's input system for smooth navigation across the farm terrain._I focused on visual feedback by integrating particle effects for combat and clear UI indicators for the countdown timer._The project served as a foundation for my understanding of game state management and win/loss condition logic.",
     "hasVideo": false,
     "videoID": "",
     "hasStore": false,
     "storeURL": "",
-    "tags": [
-      "All",
-      "Games"
-    ],
+    "tags": ["All", "Games"],
     "gitUrl": "https://github.com/cansuarslangiray/Zombie-Farmer",
-    "techTags": [
-      "Unity",
-      "C#",
-      "Game"
-    ],
-    "platforms": [
-      ""
-    ]
+    "techTags": ["Unity", "C#", "Game"],
+    "platforms": [""]
   },
   {
     "id": 2,
     "title": "Unlocker's Tale",
-    "headerOne": "Features",
-    "headerTwo": "How to Play",
-    "description": "Unlocker’s Tale is a 3D third-person adventure game which is inspired by the game called Open the Door: A Short Story”. This game consists of three levels and each level has a different playing style.",
+    "headerOne": "Project Scope",
+    "headerTwo": "Level Design & Logic",
+    "description": "I created this 3D third-person adventure to explore diverse gameplay styles from exploration to dodging and time-trial puzzles all within a single narrative progression.",
     "thumbnail": "/image/Project/ut/Part1.png",
     "imageOne": "/image/Project/ut/Part1.gif",
-    "textOne": "Level 1: House The player starts inside a house and must find the key to open the house door._Attempting to open the door without the key will prompt the player to find the key first._Once the key is acquired, a confirmation panel will appear, allowing the player to open the door and proceed to the next level.",
+    "textOne": "Unlocker's Tale was my journey into multi-genre game development. I designed three distinct levels that each require a different mechanical approach: House (Exploration), City (Reflexes), and Maze (Strategy). My focus was on creating a cohesive experience where the player’s goal finding the key remains constant while the environment changes entirely.",
     "imageTwo": "/image/Project/ut/Part2.gif",
-    "textTwo": "Level 2: City_The player finds themselves in a city environment and must run to avoid oncoming vehicles._Collect the key while dodging vehicles to progress._Getting hit by a vehicle results in a game over, but collected coins remain unchanged._Upon finding the door, the player advances to the next level.",
+    "textTwo": "In Level 2, I implemented a 'lane-based' obstacle avoidance system with moving vehicles and persistent coin collection logic._In Level 3, I developed a maze navigation system with a countdown timer, utilizing Unity’s navigation mesh for potential AI but focusing on player pathfinding and orientation challenges._I built the key/door interaction system to be modular, working across different level contexts and UI prompts.",
     "imageThree": "/image/Project/ut/Part3.gif",
-    "textThree": "Level 3: Maze_The player enters a maze and must navigate to find the hidden key within a given time limit._After obtaining the key, locate the maze's exit door to complete the level._Attempting to open the exit door without the key is futile._Failure to complete the maze within sixty seconds results in a game over, with the level restarting._Successfully escaping the maze within the time limit marks the end of the game.",
+    "textThree": "I integrated a global Game Over and Restart system that preserves certain stats (like coins) while resetting level progress._I utilized 3D character controllers and camera transitions to maintain a consistent third-person feel throughout the shifting environments._This project sharpened my skills in level-specific state management and UI-driven storytelling.",
     "hasVideo": false,
     "videoID": "",
     "hasStore": false,
     "storeURL": "",
-    "tags": [
-      "All",
-      "Games"
-    ],
+    "tags": ["All", "Games"],
     "gitUrl": "https://github.com/cansuarslangiray/UnlockersTale",
-    "techTags": [
-      "Unity",
-      "C#",
-      "Game"
-    ],
-    "platforms": [
-      ""
-    ]
+    "techTags": ["Unity", "C#", "Game"],
+    "platforms": [""]
   },
   {
     "id": 3,
     "title": "Desert Run",
-    "headerOne": "Features",
-    "headerTwo": "How to Play",
-    "description": "Desert Run is an endless runner game that places you in a scorching desert landscape.",
+    "headerOne": "Technical Execution",
+    "headerTwo": "Gameplay Systems",
+    "description": "I built this endless runner to master procedural environment generation and dynamic difficulty scaling in a mobile-first 3D environment.",
     "thumbnail": "/image/Project/dr/3.ss.png",
     "imageOne": "/image/Project/dr/1.gif",
-    "textOne": "Desert Run is an endless runner game that places you in a scorching desert landscape. You take control of a determined character racing through a narrow pathway, between towering desert hills. Your mission is to steer your character left or right to avoid obstacles and use your jumping to overcome fallen trees. As the game continues, the speed will increase and makes each hurdle more challenging to overcome.",
+    "textOne": "Desert Run was a technical exercise in 'infinite' systems. I developed a pathway generation algorithm that spawns desert terrain and obstacles ahead of the player while cleaning up past objects to maintain high performance. I focused on making the speed ramp feel natural, increasing the challenge as the player survives longer.",
     "imageTwo": "/image/Project/dr/1.ss.png",
-    "textTwo": "Endless runner gameplay set in a visually stunning desert landscape._Intuitive controls: swipe left or right to steer, swipe up to jump._Dynamic obstacles: dodge rocks, cacti, and other desert hazards._Power-ups: collect boosts to increase speed or gain temporary invincibility._Achievements and leaderboards: compete with friends and global players for the highest scores.",
+    "textTwo": "I implemented mobile-ready touch controls (swipes for steering and jumping) using an intuitive gesture detection system._I built a power-up framework, including speed boosts and invincibility states, that temporary modifies the player's collision layers and movement parameters._I integrated a high-score leaderboard system to encourage competitive play.",
     "imageThree": "/image/Project/dr/2.ss.png",
-    "textThree": "Swipe Left or Right to Steer: Use your finger to swipe left or right on the screen to move your character accordingly. Navigate through the narrow pathway and avoid obstacles._Swipe Up to Jump: Swipe upwards to make your character jump over fallen trees and other obstacles. Timing is crucial to clear hurdles successfully._Collect Power-ups: Keep an eye out for power-ups scattered throughout the desert. These can provide temporary invincibility or speed boosts, helping you progress further._Avoid Obstacles: Watch out for rocks, cacti, and other obstacles obstructing your path. Steer clear of them to prevent losing momentum or ending your run prematurely._Compete for High Scores: Aim for the highest score possible by surviving as long as you can and collecting as many points as possible. Challenge friends or aim for the global leaderboard to prove your desert running skills.",
+    "textThree": "I designed a modular obstacle system to spawn cacti, rocks, and fallen trees at randomized but fair intervals._I utilized Unity's animation system and DOTween to create smooth character transitions between lanes._This project deepened my understanding of object lifecycle management and mobile performance optimization.",
     "hasVideo": false,
     "videoID": "",
     "hasStore": false,
     "storeURL": "",
-    "tags": [
-      "All",
-      "Games"
-    ],
+    "tags": ["All", "Games"],
     "gitUrl": "https://github.com/cansuarslangiray/DesertRun",
-    "techTags": [
-      "Unity",
-      "C#",
-      "Mobile Game"
-    ],
-    "platforms": [
-      ""
-    ]
+    "techTags": ["Unity", "C#", "Mobile Game"],
+    "platforms": [""]
   },
   {
     "id": 4,
     "title": "Starship Sprint",
-    "headerOne": "Features",
-    "headerTwo": "How to Play",
-    "description": "Startship Sprint is a 3D platformer arcade game where players launch control a starship with the aim of landing it to the designated area. There are multiple levels the players can complete. It features a simple yet addictive gameplay.",
+    "headerOne": "Mechanics",
+    "headerTwo": "Technical Implementation",
+    "description": "I developed this 3D arcade platformer to focus on physics-based movement and precision landing mechanics in a space-themed setting.",
     "thumbnail": "/image/Project/star/aa.png",
     "imageOne": "/image/Project/star/ss.gif",
-    "textOne": "Starship Sprint is a thrilling 3D platformer arcade game designed to test your piloting skills in the vast expanse of space. As a player, you'll take control of a sleek starship, navigating through challenging obstacles and treacherous terrain to successfully land at the designated area. With multiple levels to conquer, each offering unique challenges, Starship Sprint promises an exhilarating experience that will keep you on the edge of your seat.",
+    "textOne": "In Starship Sprint, my primary goal was to fine-tune 'weighty' physics. I wanted the starship to feel like it had momentum, requiring the player to counter-thrust and carefully manage their trajectory. I designed several levels that force players to navigate through narrow debris fields before reaching a precise landing target.",
     "imageTwo": "/image/Project/star/a3.png",
-    "textTwo": "mmersive 3D Environment: Explore stunningly crafted 3D environments set against the backdrop of space, featuring intricate details and captivating visuals._Dynamic Gameplay: Experience adrenaline-pumping action as you maneuver your starship through a variety of obstacles, including asteroids, debris fields, and gravitational anomalies._Multiple Levels: Test your piloting prowess across a series of increasingly challenging levels, each presenting new hurdles and obstacles to overcome._Simple Controls: Enjoy intuitive controls that make piloting your starship easy to grasp yet challenging to master, ensuring players of all skill levels can dive into the excitement._Addictive Gameplay: With its fast-paced action and compelling level design, Starship Sprint offers addictive gameplay that will keep you coming back for more as you strive for perfection in every landing.",
+    "textTwo": "I implemented a physics-driven starship controller with thrust and rotation logic._I built a 'Landing Zone' detection system that calculates the angle and velocity of the ship to determine a successful touchdown vs. a crash._I developed a level manager that handles transitions and stores player scores based on time and landing precision.",
     "imageThree": "/image/Project/star/a2.png",
-    "textThree": "Launch Your Starship: Begin each level by launching your starship into space, ready to embark on your mission._Navigate the Obstacles: Use your piloting skills to navigate through a variety of obstacles, including asteroids, narrow passages, and gravitational disturbances._Land Safely: Approach the designated landing area with precision and finesse, adjusting your speed and trajectory to ensure a safe and successful landing._Complete the Level: Once you've landed your starship safely, proceed to the next level to face even greater challenges and obstacles._Achieve Mastery: Aim for perfection by completing each level with the highest score possible, mastering the art of piloting your starship with skill and precision.",
+    "textThree": "I used Unity’s particle systems to create engine exhaust and space environments to enhance the arcade feel._I designed the UI to provide real-time feedback on fuel (if applicable) and ship status._This project allowed me to experiment with 3D gravity anomalies and obstacle-based level design.",
     "hasVideo": false,
     "videoID": "",
     "hasStore": false,
     "storeURL": "",
-    "tags": [
-      "All",
-      "Games"
-    ],
+    "tags": ["All", "Games"],
     "gitUrl": "https://github.com/cansuarslangiray/StarshipSprint",
-    "techTags": [
-      "Unity",
-      "C#",
-      "Game"
-    ],
-    "platforms": [
-    ]
+    "techTags": ["Unity", "C#", "Game"],
+    "platforms": []
   },
   {
     "id": 5,
     "title": "Dino",
-    "headerOne": "Features",
-    "headerTwo": "How to Play",
-    "description": "The game challenges players to control a running dinosaur and help it avoid obstacles by jumping over them. The gameplay is simple yet addictive, making it an enjoyable experience for players of all ages.",
+    "headerOne": "Development Goals",
+    "headerTwo": "Features & Logic",
+    "description": "I recreated the classic Chrome Dino experience in Unity to practice 2D sprite management, parallax scrolling, and mobile-optimized input loops.",
     "thumbnail": "/image/Project/dino/a1.png",
     "imageOne": "/image/Project/dino/dino.gif",
-    "textOne": "'Dino' is a mobile game developed in Unity that faithfully replicates the classic gameplay of the famous Chrome Dino game, which is a popular offline browser game. The game challenges players to control a running dinosaur and help it avoid obstacles by jumping over them. The gameplay is simple yet addictive, making it an enjoyable experience for players of all ages.",
+    "textOne": "Dino was a project focused on 'gameplay feel' and retro-mechanics. I rebuilt the iconic browser game for mobile, ensuring the jump height and gravity felt identical to the original. I focused on the core loop: run, jump, duck (where applicable), and avoid, while maintaining a clean, minimalist aesthetic.",
     "imageTwo": "/image/Project/dino/a22.png",
-    "textTwo": "Classic Gameplay: Experience the familiar gameplay of the Chrome Dino game on your mobile device._Simple Controls: Tap to make the dinosaur jump, making it easy for players of all skill levels to enjoy._Endless Runner: Test your reflexes as you navigate through an endless desert landscape filled with obstacles._Obstacle Variety: Encounter a variety of obstacles, including cacti and flying birds, as you progress through the game._Increasing Difficulty: Challenge yourself to beat your high score as the game speeds up over time._Offline Play: Enjoy the game anytime, anywhere, without the need for an internet connection.",
+    "textTwo": "I implemented a parallax background system that moves at different speeds to create a sense of depth in a 2D space._I built a randomized obstacle spawner for cacti and birds that adjusts frequency based on the player's current speed._I integrated a high-score system that persists across sessions, mimicking the 'one-more-try' addictive nature of the original.",
     "imageThree": "/image/Project/dino/a33.png",
-    "textThree": "Tap to Jump: Tap anywhere on the screen to make the dinosaur jump over obstacles._Avoid Obstacles: Navigate the dinosaur through the desert landscape, avoiding cacti and flying birds._Survive as Long as Possible: Keep the dinosaur running for as long as you can without hitting any obstacles._Beat Your High Score: Challenge yourself to beat your previous high score by improving your reflexes and reaction time._Share Your Score: Compete with friends and family by sharing your high score and see who can run the farthest.",
+    "textThree": "I optimized the game for mobile with simple tap-to-jump controls that respond with zero lag._I managed the game's difficulty curve by gradually increasing the global time scale as the player's score rises._This project was a great lesson in 2D physics and mobile UI simplicity.",
     "hasVideo": false,
     "videoID": "",
     "hasStore": false,
     "storeURL": "",
-    "tags": [
-      "All",
-      "Games"
-    ],
+    "tags": ["All", "Games"],
     "gitUrl": "https://github.com/cansuarslangiray/Dino",
-    "techTags": [
-      "Unity",
-      "C#",
-      "Mobile Game"
-    ],
-    "platforms": [
-      ""
-    ]
+    "techTags": ["Unity", "C#", "Mobile Game"],
+    "platforms": [""]
   },
   {
     "id": 6,
     "title": "Susuwatari",
-    "headerOne": "Features",
-    "headerTwo": "How to Play",
-    "description": "Susuwatari is a game inspired by Flappy Bird, developed using the Unity Engine, and designed for mobile platforms.",
+    "headerOne": "Project Focus",
+    "headerTwo": "Implementation Details",
+    "description": "I developed this mobile game inspired by Flappy Bird, focusing on smooth physics-based flight, scoring systems, and polished UI animations.",
     "thumbnail": "/image/Project/furry/a1.png",
     "imageOne": "/image/Project/furry/furry.gif",
-    "textOne": "Susuwatari is a game inspired by Flappy Bird, developed using the Unity Engine, and designed for mobile platforms. In this game, players control a character named 'Susuwatari' and aim to navigate it through two constantly incoming pipes by timely jumping. Successfully passing through the pipes earns the player a point. However, if the character collides with the pipes, it falls to the ground, requiring the player to restart the game. Players only need to tap the screen to make Susuwatari jump. The game features include sound effects, high score tracking, and beautiful graphics",
+    "textOne": "With Susuwatari, I wanted to practice the 'Flappy' mechanic while adding my own visual style. I implemented a physics-based jump system where the player must fight against constant gravity. My focus was on the collision precision ensuring that passing through pipes felt fair and hitting them felt impactful.",
     "imageTwo": "/image/Project/furry/a2.png",
-    "textTwo": "Simple one-touch control: Players can easily play the game by tapping the screen to make Susuwatari jump._Endless gameplay: The game offers endless challenges with continuously incoming pipes, providing an addictive experience._Score tracking: Players can keep track of their high scores to compete with themselves or others._Sound effects: Immersive sound effects enhance the gaming experience, making it more engaging._Beautiful graphics: Susuwatari features visually appealing graphics that create an attractive gaming environment.",
+    "textTwo": "I built a procedural pipe spawning system that varies the gap heights to keep the gameplay unpredictable._I integrated a score tracking system that triggers UI animations and sound effects upon passing through pipes._I developed a high-score persistence system using PlayerPrefs to track the user's best performance.",
     "imageThree": "/image/Project/furry/a3.png",
-    "textThree": "Launch the Susuwatari game on your mobile device._Upon starting the game, you'll see Susuwatari positioned at the bottom of the screen._Pipes will start appearing from the right side of the screen, moving towards Susuwatari._Tap the screen to make Susuwatari jump._Time your jumps carefully to pass through the gaps between the pipes._Each successful passage through the pipes earns you one point._Be cautious! Colliding with the pipes will cause Susuwatari to fall to the ground, and you'll need to restart the game._Keep playing to beat your high score and challenge yourself to reach new milestones._Enjoy the immersive sound effects and beautiful graphics as you navigate Susuwatari through the pipes.",
+    "textThree": "I used Unity’s 2D physics engine for Susuwatari’s movement, fine-tuning the upward force for a snappy feel._I implemented the UI transitions and restart flows to be quick, minimizing the time between death and the next attempt._This project helped me master the basics of 2D game loops and mobile deployment.",
     "hasVideo": false,
     "videoID": "",
     "hasStore": false,
     "storeURL": "",
-    "tags": [
-      "All",
-      "Games"
-    ],
+    "tags": ["All", "Games"],
     "gitUrl": "https://github.com/cansuarslangiray/Susuwatari",
-    "techTags": [
-      "Unity",
-      "C#",
-      "Mobile Game"
-    ],
-    "platforms": [
-      ""
-    ]
+    "techTags": ["Unity", "C#", "Mobile Game"],
+    "platforms": [""]
   },
   {
     "id": 7,
     "title": "Syllabus Conversion and Management Application",
-    "headerOne": "Features",
-    "headerTwo": "How to use",
-    "description": "The Syllabus Conversion and Management Application is designed specifically for educators and school administrators. Its primary function is to streamline the conversion of various syllabus data formats into a cohesive JSON structure, facilitating integration with systems such as OASIS. This software prioritizes efficiency and transparency in academic record-keeping.",
+    "headerOne": "Development Overview",
+    "headerTwo": "Core Functionalities",
+    "description": "I developed this Java-based desktop application to solve a real-world administrative problem: converting complex syllabus data into structured JSON for system integration.",
     "thumbnail": "/image/Project/syl/syl.png",
     "imageOne": "/image/Project/syl/syl.png",
-    "textOne": "The program, tailored for educators and school administrators, efficiently converts diverse syllabus data into a unified JSON format for seamless integration with systems like OASIS. It incorporates version control, prompting users to justify modifications, and ensuring transparent academic record-keeping. The import feature facilitates the examination and comparison of stored JSON files, promoting data accessibility and transferability. With its user-friendly design, the program ensures ease of use without requiring specialized training.",
+    "textOne": "As a Computer Engineering project, I built this application to streamline how educators manage academic records. I focused on data integrity and ease of use, creating a tool that could take various input formats and output a unified, OASIS-compatible JSON structure while maintaining a transparent history of changes.",
     "imageTwo": "/image/Project/syl/part2.png",
-    "textTwo": "Efficient Conversion: Seamlessly converts diverse syllabus data into a unified JSON format._Version Control: Incorporates version control mechanisms to track modifications made to syllabus data. Users are prompted to justify changes, ensuring transparent academic record-keeping._Import Functionality: Allows for easy examination and comparison of stored JSON files. This feature promotes data accessibility and transferability._User-Friendly Design: Designed with an intuitive interface, the application ensures ease of use without the need for specialized training.",
+    "textTwo": "I implemented a version control system that requires users to provide justifications for any syllabus modifications._I developed a robust JSON parser and exporter to ensure the output met strict architectural requirements for external database integration._I built a side-by-side comparison tool that allows users to examine differences between two stored JSON versions.",
     "imageThree": "/image/Project/syl/Part3.png",
-    "textThree": "Installation: Download and install the Syllabus Conversion and Management Application on your system._Conversion: Upon launching the application, select the option to convert syllabus data. Follow the prompts to input or import the syllabus files you wish to convert._Version Control: As you make modifications to the converted syllabus data, the application will prompt you to justify each change. This ensures transparency and accountability in academic record-keeping._Import and Comparison: Utilize the import feature to examine and compare stored JSON files. This functionality enhances data accessibility and transferability, allowing for seamless integration with systems like OASIS._User Experience: Benefit from the user-friendly design of the application, which prioritizes ease of use. Navigate through the features effortlessly, without the need for specialized training.",
+    "textThree": "I designed the desktop interface using JavaFX, focusing on a clean and intuitive user experience for non-technical users._I integrated file I/O operations to handle the import and export of large datasets efficiently._This project strengthened my skills in software architecture, versioning logic, and desktop UI design.",
     "hasVideo": false,
     "videoID": "",
     "hasStore": false,
     "storeURL": "",
-    "tags": [
-      "All",
-      "Applications"
-    ],
+    "tags": ["All", "Applications"],
     "gitUrl": "https://github.com/cansuarslangiray/SE302Project",
-    "techTags": [
-      "Java",
-      "JavaFX",
-      "Desktop App"
-    ],
-    "platforms": [
-      ""
-    ]
+    "techTags": ["Java", "JavaFX", "Desktop App"],
+    "platforms": [""]
   }
 ]
