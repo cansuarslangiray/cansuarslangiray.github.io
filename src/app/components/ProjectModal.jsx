@@ -1,7 +1,27 @@
 import React, { useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
-const ProjectModal = ({ project, onClose }) => {
+const modalLabels = {
+  en: {
+    company: "Company Project",
+    companyFallback: "Company",
+    description: "Description",
+    imageOneAlt: "Project detail",
+    imageTwoAlt: "Project features",
+    imageThreeAlt: "Project gameplay",
+  },
+  tr: {
+    company: "Şirket Projesi",
+    companyFallback: "Şirket",
+    description: "Açıklama",
+    imageOneAlt: "Proje detayı",
+    imageTwoAlt: "Proje özellikleri",
+    imageThreeAlt: "Proje oynanışı",
+  },
+};
+
+const ProjectModal = ({ project, onClose, language = "en" }) => {
+  const labels = modalLabels[language] ?? modalLabels.en;
   const toItems = (value) => (typeof value === "string" ? value.split("_").filter(Boolean) : []);
 
   useEffect(() => {
@@ -48,7 +68,7 @@ const ProjectModal = ({ project, onClose }) => {
                 {project.projectType === "company" && (
                   <div className="mt-3 rounded-2xl border border-[#ddd2f8] bg-[#f8f4ff] p-4">
                     <p className="text-sm font-semibold text-[#4f3a86]">
-                      Company Project: {project.companyName ?? "Company"}
+                      {labels.company}: {project.companyName ?? labels.companyFallback}
                     </p>
                     {Array.isArray(project.companyResponsibilities) && project.companyResponsibilities.length > 0 && (
                       <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-[#4d4d52]">
@@ -63,17 +83,17 @@ const ProjectModal = ({ project, onClose }) => {
                 <div className="grid-layout">
                   <div className="grid-row">
                     <div className="text-part">
-                      <h3 className="headings">Description</h3>
+                      <h3 className="headings">{labels.description}</h3>
                       <p className="text-sm leading-7 text-[#4d4d52]">{project.textOne}</p>
                     </div>
                     <div className="image-part">
-                      <img src={project.imageOne} alt="Project detail" loading="lazy" decoding="async" fetchPriority="low" />
+                      <img src={project.imageOne} alt={labels.imageOneAlt} loading="lazy" decoding="async" fetchPriority="low" />
                     </div>
                   </div>
 
                   <div className="grid-row">
                     <div className="image-part">
-                      <img src={project.imageTwo} alt="Project features" loading="lazy" decoding="async" fetchPriority="low" />
+                      <img src={project.imageTwo} alt={labels.imageTwoAlt} loading="lazy" decoding="async" fetchPriority="low" />
                     </div>
                     <div className="text-part">
                       <h3 className="headings">{project.headerOne}</h3>
@@ -95,7 +115,7 @@ const ProjectModal = ({ project, onClose }) => {
                       </ul>
                     </div>
                     <div className="image-part">
-                      <img src={project.imageThree} alt="Project gameplay" loading="lazy" decoding="async" fetchPriority="low" />
+                      <img src={project.imageThree} alt={labels.imageThreeAlt} loading="lazy" decoding="async" fetchPriority="low" />
                     </div>
                   </div>
                 </div>

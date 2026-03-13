@@ -17,7 +17,16 @@ const chipClass = (tag) => {
   return "bg-[#ece6ff] text-[#4f3a86]";
 };
 
-const ProjectCard = ({ imgUrl, title, description, techTags = [], platforms = [], platformLinks = {}, click }) => {
+const ProjectCard = ({
+  imgUrl,
+  title,
+  description,
+  techTags = [],
+  platforms = [],
+  platformLinks = {},
+  click,
+  moreInfoLabel = "More info",
+}) => {
   const handleKeyDown = (event) => {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
@@ -86,7 +95,7 @@ const ProjectCard = ({ imgUrl, title, description, techTags = [], platforms = []
         <h3 className="text-lg font-bold text-[#2a2340]">{title}</h3>
         <p className="line-clamp-2 text-sm leading-6 text-[#6e6e73]">{description}</p>
         <p className="inline-flex rounded-full border border-[#d8c9fb] bg-[#f3ecff] px-3 py-1 text-xs font-semibold tracking-wide text-[#5e4f85]">
-          More info
+          {moreInfoLabel}
         </p>
       </div>
     </div>

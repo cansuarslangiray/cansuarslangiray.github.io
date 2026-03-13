@@ -4,7 +4,37 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import ProjectCard from "@/app/components/ProjectCard";
 import ProjectModal from "@/app/components/ProjectModal";
 
-const ProjectSection = ({ projectsData, fullProjectsData = [], certificateData = [] }) => {
+const labelsByLanguage = {
+  en: {
+    projects: "Projects",
+    certificates: "Certificates",
+    all: "All",
+    games: "Games",
+    applications: "Applications",
+    certificatesSubtitle: "Professional and academic certificates from recent programs and trainings.",
+    loadingCertificates: "Loading certificates...",
+    details: "Details",
+    additionalInformation: "Additional Information",
+    detailsSoon: "Details will be available soon.",
+    moreInfo: "More info",
+  },
+  tr: {
+    projects: "Projeler",
+    certificates: "Sertifikalar",
+    all: "Tümü",
+    games: "Oyunlar",
+    applications: "Uygulamalar",
+    certificatesSubtitle: "Son dönem program ve eğitimlerden profesyonel ve akademik sertifikalar.",
+    loadingCertificates: "Sertifikalar yükleniyor...",
+    details: "Detaylar",
+    additionalInformation: "Ek Bilgiler",
+    detailsSoon: "Detaylar yakında eklenecek.",
+    moreInfo: "Daha Fazla Bilgi",
+  },
+};
+
+const ProjectSection = ({ language = "en", projectsData, fullProjectsData = [], certificateData = [] }) => {
+  const labels = labelsByLanguage[language] ?? labelsByLanguage.en;
   const [activeView, setActiveView] = useState("projects");
   const [tag, setTag] = useState("All");
   const [selectedProject, setSelectedProject] = useState(null);
@@ -56,15 +86,15 @@ const ProjectSection = ({ projectsData, fullProjectsData = [], certificateData =
 
   const normalizeProjectForModal = useCallback((project) => ({
     ...project,
-    headerOne: project.headerOne ?? "Details",
-    headerTwo: project.headerTwo ?? "Additional Information",
+    headerOne: project.headerOne ?? labels.details,
+    headerTwo: project.headerTwo ?? labels.additionalInformation,
     textOne: project.textOne ?? project.description ?? "",
-    textTwo: project.textTwo ?? "Details will be available soon.",
-    textThree: project.textThree ?? "Details will be available soon.",
+    textTwo: project.textTwo ?? labels.detailsSoon,
+    textThree: project.textThree ?? labels.detailsSoon,
     imageOne: project.imageOne ?? project.thumbnail,
     imageTwo: project.imageTwo ?? project.thumbnail,
     imageThree: project.imageThree ?? project.thumbnail,
-  }), []);
+  }), [labels.additionalInformation, labels.details, labels.detailsSoon]);
 
   const filteredProjects = useMemo(() => {
     if (tag === "All") {
@@ -91,6 +121,20 @@ const ProjectSection = ({ projectsData, fullProjectsData = [], certificateData =
   const previewText = (description) =>
     description.includes(".") ? `${description.split(".")[0]}.` : description;
 
+  const localizeTechTag = (tagName) => {
+    if (language !== "tr") {
+      return tagName;
+    }
+
+    const normalized = tagName.toLowerCase();
+    if (normalized === "game") return "Oyun";
+    if (normalized === "mobile game") return "Mobil Oyun";
+    if (normalized === "desktop app") return "Masaüstü Uygulama";
+    if (normalized === "company project") return "Şirket Projesi";
+    if (normalized === "multiplayer") return "Çok Oyunculu";
+    return tagName;
+  };
+
   const openProjectDetails = (projectId) => {
     const fullProject = fullProjectMap.get(projectId) ?? projectMap.get(projectId);
     if (fullProject) {
@@ -101,7 +145,7 @@ const ProjectSection = ({ projectsData, fullProjectsData = [], certificateData =
   return (
     <section id="showcase" className="showcase-shell mb-14 scroll-mt-24">
       <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
-        <h2 className="section-heading">{activeView === "projects" ? "Projects" : "Certificates"}</h2>
+        <h2 className="section-heading">{activeView === "projects" ? labels.projects : labels.certificates}</h2>
 
         <div className="flex gap-2">
           <button
@@ -113,7 +157,7 @@ const ProjectSection = ({ projectsData, fullProjectsData = [], certificateData =
                 : "hover:border-[#cab8f5] hover:bg-[#f8f4ff]"
             }`}
           >
-            Projects
+            {labels.projects}
           </button>
           <button
             type="button"
@@ -124,7 +168,7 @@ const ProjectSection = ({ projectsData, fullProjectsData = [], certificateData =
                 : "hover:border-[#cab8f5] hover:bg-[#f8f4ff]"
             }`}
           >
-            Certificates
+            {labels.certificates}
           </button>
         </div>
       </div>
@@ -132,18 +176,22 @@ const ProjectSection = ({ projectsData, fullProjectsData = [], certificateData =
       {activeView === "projects" && (
         <>
           <div className="mb-6 flex flex-wrap gap-2">
-            {["All", "Games", "Applications"].map((item) => (
+            {[
+              { value: "All", label: labels.all },
+              { value: "Games", label: labels.games },
+              { value: "Applications", label: labels.applications },
+            ].map((item) => (
               <button
-                key={item}
+                key={item.value}
                 type="button"
-                onClick={() => setTag(item)}
+                onClick={() => setTag(item.value)}
                 className={`pill-soft px-4 py-2 text-sm transition-colors ${
-                  tag === item
+                  tag === item.value
                     ? "active"
                     : "hover:border-[#cab8f5] hover:bg-[#f8f4ff]"
                 }`}
               >
-                {item}
+                {item.label}
               </button>
             ))}
           </div>
@@ -157,9 +205,10 @@ const ProjectSection = ({ projectsData, fullProjectsData = [], certificateData =
                     title={project.title}
                     description={previewText(project.description)}
                     imgUrl={project.thumbnail}
-                    techTags={meta.techTags}
+                    techTags={meta.techTags.map(localizeTechTag)}
                     platforms={meta.platforms}
                     platformLinks={meta.platformLinks}
+                    moreInfoLabel={labels.moreInfo}
                     click={() => openProjectDetails(project.id)}
                   />
                 </li>
@@ -172,7 +221,7 @@ const ProjectSection = ({ projectsData, fullProjectsData = [], certificateData =
       {activeView === "certificates" && (
         <>
           <p className="section-subtitle mb-6">
-            Professional and academic certificates from recent programs and trainings.
+            {labels.certificatesSubtitle}
           </p>
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {certificates.map((certificate) => (
@@ -198,11 +247,17 @@ const ProjectSection = ({ projectsData, fullProjectsData = [], certificateData =
               </a>
             ))}
           </div>
-          {isCertificatesLoading && <p className="text-sm text-[#6e6e73]">Loading certificates...</p>}
+          {isCertificatesLoading && <p className="text-sm text-[#6e6e73]">{labels.loadingCertificates}</p>}
         </>
       )}
 
-      {selectedProject && <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />}
+      {selectedProject && (
+        <ProjectModal
+          project={selectedProject}
+          language={language}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
     </section>
   );
 };

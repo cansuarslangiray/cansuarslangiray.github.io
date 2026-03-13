@@ -30,6 +30,29 @@ const contactItems = [
   },
 ];
 
+const contentByLanguage = {
+  en: {
+    heading: "Contact",
+    subtitle: "Feel free to reach out for collaboration, or game development opportunities.",
+    labels: {
+      email: "Email",
+      phone: "Phone",
+      github: "GitHub",
+      linkedin: "LinkedIn",
+    },
+  },
+  tr: {
+    heading: "İletişim",
+    subtitle: "İş birliği veya oyun geliştirme fırsatları için dilediğiniz zaman ulaşabilirsiniz.",
+    labels: {
+      email: "E-posta",
+      phone: "Telefon",
+      github: "GitHub",
+      linkedin: "LinkedIn",
+    },
+  },
+};
+
 const GithubIcon = ({ className = "h-5 w-5" }) => (
   <svg viewBox="0 0 24 24" className={className} aria-hidden="true" fill="currentColor">
     <path d="M12 2a10 10 0 0 0-3.162 19.488c.5.093.682-.216.682-.48 0-.236-.009-.863-.013-1.694-2.776.603-3.362-1.34-3.362-1.34-.454-1.152-1.11-1.46-1.11-1.46-.908-.62.069-.607.069-.607 1.004.07 1.531 1.03 1.531 1.03.893 1.53 2.342 1.088 2.912.832.09-.646.35-1.088.636-1.338-2.217-.252-4.549-1.108-4.549-4.934 0-1.09.39-1.981 1.029-2.678-.103-.253-.446-1.268.098-2.644 0 0 .84-.269 2.75 1.023A9.59 9.59 0 0 1 12 6.844a9.61 9.61 0 0 1 2.504.337c1.909-1.292 2.748-1.023 2.748-1.023.545 1.376.202 2.391.1 2.644.64.697 1.027 1.588 1.027 2.678 0 3.835-2.336 4.68-4.56 4.928.359.31.678.922.678 1.858 0 1.341-.012 2.422-.012 2.751 0 .267.18.578.688.48A10.001 10.001 0 0 0 12 2Z" />
@@ -43,12 +66,14 @@ const LinkedinIcon = ({ className = "h-5 w-5" }) => (
   </svg>
 );
 
-const EmailSection = () => {
+const EmailSection = ({ language = "en" }) => {
+  const content = contentByLanguage[language] ?? contentByLanguage.en;
+
   return (
     <section id="contact" className="mb-10">
-      <h2 className="section-heading mb-2">Contact</h2>
+      <h2 className="section-heading mb-2">{content.heading}</h2>
       <p className="section-subtitle mb-6">
-        Feel free to reach out for collaboration, or game development opportunities.
+        {content.subtitle}
       </p>
 
       <div className="grid gap-4 md:grid-cols-2">
@@ -67,7 +92,7 @@ const EmailSection = () => {
               {item.icon === "linkedin" && <LinkedinIcon />}
             </div>
             <div>
-              <p className="text-sm font-semibold text-[#4d4d52]">{item.label}</p>
+              <p className="text-sm font-semibold text-[#4d4d52]">{content.labels[item.icon]}</p>
               <p className="text-sm text-[#6e6e73]">{item.value}</p>
             </div>
           </a>
