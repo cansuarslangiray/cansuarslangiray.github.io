@@ -6,6 +6,7 @@ const modalLabels = {
     company: "Company Project",
     companyFallback: "Company",
     description: "Description",
+    close: "Close modal",
     imageOneAlt: "Project detail",
     imageTwoAlt: "Project features",
     imageThreeAlt: "Project gameplay",
@@ -14,6 +15,7 @@ const modalLabels = {
     company: "Şirket Projesi",
     companyFallback: "Şirket",
     description: "Açıklama",
+    close: "Pencereyi kapat",
     imageOneAlt: "Proje detayı",
     imageTwoAlt: "Proje özellikleri",
     imageThreeAlt: "Proje oynanışı",
@@ -61,6 +63,14 @@ const ProjectModal = ({ project, onClose, language = "en" }) => {
             leaveTo="opacity-0 scale-95"
           >
             <div className="modal-container relative z-10" onClick={(event) => event.stopPropagation()}>
+              <button
+                type="button"
+                onClick={onClose}
+                aria-label={labels.close}
+                className="absolute right-4 top-4 z-20 inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#d2d2d7] bg-white/90 text-xl font-semibold leading-none text-[#1d1d1f] shadow-sm transition-colors hover:bg-[#f5f5f7]"
+              >
+                ×
+              </button>
               <div className="modal-content">
                 <h2 className="project-title">
                   {project.title}

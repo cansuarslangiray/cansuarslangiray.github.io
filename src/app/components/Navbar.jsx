@@ -49,7 +49,7 @@ const Navbar = ({ language = "en", onLanguageChange }) => {
         <div className="hidden items-center gap-4 md:flex">
           <button
             type="button"
-            className="inline-flex rounded-xl border border-[#d8c9fb] bg-[#f4efff] px-3 py-1.5 text-xs font-semibold text-[#6A5BC9] transition-colors hover:bg-[#ede4ff]"
+            className="hidden inline-flex rounded-xl border border-[#d8c9fb] bg-[#f4efff] px-3 py-1.5 text-xs font-semibold text-[#6A5BC9] transition-colors hover:bg-[#ede4ff]"
             onClick={toggleLanguage}
             aria-label={language === "en" ? "Switch language to Turkish" : "Dili İngilizceye çevir"}
           >
@@ -77,7 +77,7 @@ const Navbar = ({ language = "en", onLanguageChange }) => {
           <li className="mb-2">
             <button
               type="button"
-              className="inline-flex rounded-xl border border-[#d8c9fb] bg-[#f4efff] px-3 py-1.5 text-xs font-semibold text-[#6A5BC9] transition-colors hover:bg-[#ede4ff]"
+              className="hidden inline-flex rounded-xl border border-[#d8c9fb] bg-[#f4efff] px-3 py-1.5 text-xs font-semibold text-[#6A5BC9] transition-colors hover:bg-[#ede4ff]"
               onClick={toggleLanguage}
               aria-label={language === "en" ? "Switch language to Turkish" : "Dili İngilizceye çevir"}
             >
