@@ -24,19 +24,7 @@ const AboutSection = ({ language = "en" }) => {
                 <h2 className="section-heading">{content.heading}</h2>
             </div>
 
-            <div className="flex w-full flex-col gap-3 md:flex-row md:items-center md:gap-4">
-                <div className="glass-card w-full flex-none overflow-hidden md:w-[200px]">
-                    <img
-                        src="/image/unity.jpg"
-                        alt="Unity"
-                        className="h-[165px] w-full object-cover md:h-[190px]"
-                        onError={(event) => {
-                            event.currentTarget.onerror = null;
-                            event.currentTarget.src = "/image/me.jpg";
-                        }}
-                    />
-                </div>
-
+            <div className="w-full">
                 <div className="glass-card w-full p-4 md:flex-1">
                     <p className="section-subtitle mx-auto text-center text-[0.96rem] leading-7 md:text-left">
                         {content.body}
